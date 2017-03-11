@@ -16,7 +16,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     var yNDelegate: YNTableViewDelegate?
     var shouldExpandOnlyOneCell = false
-    var _expandableCells = NSMutableDictionary()
+    var expandableCells: NSMutableDictionary?
 
     public override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -41,6 +41,46 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
   
     }
     
+    func initExpandableCells() -> NSMutableDictionary? {
+        if self.expandableCells == nil {
+            self.expandableCells = NSMutableDictionary()
+            guard let delegate = yNDelegate else { return nil }
+            guard let numberOfSections = delegate.numberOfSections?(in: self) else { return nil }
+            
+            for section in 0..<numberOfSections {
+                let numberOfRowsInSection = delegate.tableView(self, numberOfRowsInSection: section)
+                var rows = [Any]()
+                for row in 0..<numberOfRowsInSection {
+                    let rowIndexPath = IndexPath(row: row, section: section)
+                    let numberOfSubrows = delegate.tableView(self, numberOfSubRowsAt: rowIndexPath)
+                    var isExpandedInitially: Bool = false
+                    if delegate.responds(to: Selector("tableView:shouldExpandSubRowsOfCellAtIndexPath:")) {
+                        isExpandedInitially = delegate.tableView(self, shouldExpandSubRowsOfCellAt: rowIndexPath)
+                    }
+                    let rowInfo = NSMutableDictionary(objects: [(isExpandedInitially), (numberOfSubrows)], forKeys: [YNTableView.kIsExpandedKey as NSCopying, YNTableView.kSubrowsKey as NSCopying])
+                    rows.append(rowInfo)
+                }
+                self.expandableCells?[(section)] = rows
+            }
+        }
+        return self.expandableCells
+    }
+    
+    func refreshData() {
+        self.expandableCells?.removeAllObjects()
+        
+        super.reloadData()
+    }
+    
+    func refreshDataWithScrollingTo(indexPath: IndexPath) {
+        self.refreshData()
+        
+        if indexPath.section < self.numberOfSections && indexPath.row < self.numberOfRows(inSection: indexPath.section) {
+            self.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
+
+    }
+    
     // MARK: UITableViewDataSource
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,5 +95,15 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     // MARK: YNTableViewUtils
-
+    
+    func numberOfExpandedSubrows(inSection section: Int) -> Int {
+        var totalExpandedSubrows: Int = 0
+        var rows: [Any] = self.expandableCells[section]
+        for row: Any in rows {
+            if row[kIsExpandedKey] == true {
+                totalExpandedSubrows += CInt(row[kSubrowsKey])
+            }
+        }
+        return totalExpandedSubrows
+    }
 }

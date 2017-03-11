@@ -13,6 +13,8 @@
 		1917E1E31E73838700322999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1DC1E73838700322999 /* Main.storyboard */; };
 		1917E1E41E73838700322999 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1DE1E73838700322999 /* Info.plist */; };
 		1917E1E51E73838700322999 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917E1DF1E73838700322999 /* ViewController.swift */; };
+		19A5C08B1E74138F00B91D05 /* YNTableViewCellIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5C08A1E74138F00B91D05 /* YNTableViewCellIndicator.swift */; };
+		19A5C08C1E74138F00B91D05 /* YNTableViewCellIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5C08A1E74138F00B91D05 /* YNTableViewCellIndicator.swift */; };
 		19B0FDFA1E739DB700AD9A99 /* YNTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDF91E739DB700AD9A99 /* YNTableView.swift */; };
 		19B0FDFF1E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */; };
 		19B0FE001E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */; };
@@ -40,6 +42,7 @@
 		1917E1DD1E73838700322999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1917E1DE1E73838700322999 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1917E1DF1E73838700322999 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		19A5C08A1E74138F00B91D05 /* YNTableViewCellIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewCellIndicator.swift; sourceTree = "<group>"; };
 		19B0FDF91E739DB700AD9A99 /* YNTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableView.swift; sourceTree = "<group>"; };
 		19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewDelegate.swift; sourceTree = "<group>"; };
 		19B0FE091E73A9E900AD9A99 /* YNTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewCell.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 				19B0FDF91E739DB700AD9A99 /* YNTableView.swift */,
 				19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */,
 				19B0FE091E73A9E900AD9A99 /* YNTableViewCell.swift */,
+				19A5C08A1E74138F00B91D05 /* YNTableViewCellIndicator.swift */,
 			);
 			name = YNExpandableCell;
 			path = YNExpandableCell/YNExpandableCell;
@@ -214,6 +218,7 @@
 			files = (
 				19B0FDFA1E739DB700AD9A99 /* YNTableView.swift in Sources */,
 				19B0FE0A1E73A9E900AD9A99 /* YNTableViewCell.swift in Sources */,
+				19A5C08B1E74138F00B91D05 /* YNTableViewCellIndicator.swift in Sources */,
 				19B0FDFF1E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */,
 				1917E1E51E73838700322999 /* ViewController.swift in Sources */,
 				1917E1E01E73838700322999 /* AppDelegate.swift in Sources */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19A5C08C1E74138F00B91D05 /* YNTableViewCellIndicator.swift in Sources */,
 				19B0FE011E73A2C400AD9A99 /* YNTableView.swift in Sources */,
 				19B0FE001E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */,
 				19B0FE0B1E73A9E900AD9A99 /* YNTableViewCell.swift in Sources */,
