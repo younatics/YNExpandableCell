@@ -13,14 +13,14 @@
 		1917E1E31E73838700322999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1DC1E73838700322999 /* Main.storyboard */; };
 		1917E1E41E73838700322999 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1DE1E73838700322999 /* Info.plist */; };
 		1917E1E51E73838700322999 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917E1DF1E73838700322999 /* ViewController.swift */; };
-		19A5C08B1E74138F00B91D05 /* YNTableViewCellIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5C08A1E74138F00B91D05 /* YNTableViewCellIndicator.swift */; };
-		19A5C08C1E74138F00B91D05 /* YNTableViewCellIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5C08A1E74138F00B91D05 /* YNTableViewCellIndicator.swift */; };
-		19B0FDFA1E739DB700AD9A99 /* YNTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDF91E739DB700AD9A99 /* YNTableView.swift */; };
-		19B0FDFF1E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */; };
-		19B0FE001E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */; };
-		19B0FE011E73A2C400AD9A99 /* YNTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDF91E739DB700AD9A99 /* YNTableView.swift */; };
-		19B0FE0A1E73A9E900AD9A99 /* YNTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FE091E73A9E900AD9A99 /* YNTableViewCell.swift */; };
-		19B0FE0B1E73A9E900AD9A99 /* YNTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FE091E73A9E900AD9A99 /* YNTableViewCell.swift */; };
+		197695D41E7422BA005F093F /* SKSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197695D31E7422BA005F093F /* SKSTableView.swift */; };
+		197695D51E7422BA005F093F /* SKSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197695D31E7422BA005F093F /* SKSTableView.swift */; };
+		197695D71E742361005F093F /* SKSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197695D61E742361005F093F /* SKSTableViewDelegate.swift */; };
+		197695D81E742361005F093F /* SKSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197695D61E742361005F093F /* SKSTableViewDelegate.swift */; };
+		197695DA1E742394005F093F /* SKSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197695D91E742394005F093F /* SKSTableViewCell.swift */; };
+		197695DB1E742394005F093F /* SKSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197695D91E742394005F093F /* SKSTableViewCell.swift */; };
+		197695DD1E7423DA005F093F /* SKSTableViewCellIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197695DC1E7423DA005F093F /* SKSTableViewCellIndicator.swift */; };
+		197695DE1E7423DA005F093F /* SKSTableViewCellIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197695DC1E7423DA005F093F /* SKSTableViewCellIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +42,10 @@
 		1917E1DD1E73838700322999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1917E1DE1E73838700322999 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1917E1DF1E73838700322999 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		19A5C08A1E74138F00B91D05 /* YNTableViewCellIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewCellIndicator.swift; sourceTree = "<group>"; };
-		19B0FDF91E739DB700AD9A99 /* YNTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableView.swift; sourceTree = "<group>"; };
-		19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewDelegate.swift; sourceTree = "<group>"; };
-		19B0FE091E73A9E900AD9A99 /* YNTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewCell.swift; sourceTree = "<group>"; };
+		197695D31E7422BA005F093F /* SKSTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSTableView.swift; sourceTree = "<group>"; };
+		197695D61E742361005F093F /* SKSTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSTableViewDelegate.swift; sourceTree = "<group>"; };
+		197695D91E742394005F093F /* SKSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSTableViewCell.swift; sourceTree = "<group>"; };
+		197695DC1E7423DA005F093F /* SKSTableViewCellIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSTableViewCellIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +87,10 @@
 		1917E1D61E73838700322999 /* YNExpandableCell */ = {
 			isa = PBXGroup;
 			children = (
-				19B0FDF91E739DB700AD9A99 /* YNTableView.swift */,
-				19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */,
-				19B0FE091E73A9E900AD9A99 /* YNTableViewCell.swift */,
-				19A5C08A1E74138F00B91D05 /* YNTableViewCellIndicator.swift */,
+				197695D31E7422BA005F093F /* SKSTableView.swift */,
+				197695D61E742361005F093F /* SKSTableViewDelegate.swift */,
+				197695D91E742394005F093F /* SKSTableViewCell.swift */,
+				197695DC1E7423DA005F093F /* SKSTableViewCellIndicator.swift */,
 			);
 			name = YNExpandableCell;
 			path = YNExpandableCell/YNExpandableCell;
@@ -166,6 +166,7 @@
 					1917E1C61E73831A00322999 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4G7K3CN2JU;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1917E1B21E73831900322999;
 					};
@@ -216,11 +217,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19B0FDFA1E739DB700AD9A99 /* YNTableView.swift in Sources */,
-				19B0FE0A1E73A9E900AD9A99 /* YNTableViewCell.swift in Sources */,
-				19A5C08B1E74138F00B91D05 /* YNTableViewCellIndicator.swift in Sources */,
-				19B0FDFF1E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */,
+				197695D71E742361005F093F /* SKSTableViewDelegate.swift in Sources */,
+				197695DA1E742394005F093F /* SKSTableViewCell.swift in Sources */,
 				1917E1E51E73838700322999 /* ViewController.swift in Sources */,
+				197695DD1E7423DA005F093F /* SKSTableViewCellIndicator.swift in Sources */,
+				197695D41E7422BA005F093F /* SKSTableView.swift in Sources */,
 				1917E1E01E73838700322999 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,10 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19A5C08C1E74138F00B91D05 /* YNTableViewCellIndicator.swift in Sources */,
-				19B0FE011E73A2C400AD9A99 /* YNTableView.swift in Sources */,
-				19B0FE001E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */,
-				19B0FE0B1E73A9E900AD9A99 /* YNTableViewCell.swift in Sources */,
+				197695D81E742361005F093F /* SKSTableViewDelegate.swift in Sources */,
+				197695D51E7422BA005F093F /* SKSTableView.swift in Sources */,
+				197695DB1E742394005F093F /* SKSTableViewCell.swift in Sources */,
+				197695DE1E7423DA005F093F /* SKSTableViewCellIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,11 +388,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				INFOPLIST_FILE = YNExpandableCellUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.YNExpandableCellUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = YNExpandableCell;
 			};
@@ -401,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				INFOPLIST_FILE = YNExpandableCellUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
