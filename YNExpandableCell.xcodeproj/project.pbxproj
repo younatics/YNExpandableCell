@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1917E1CC1E73831A00322999 /* YNExpandableCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917E1CB1E73831A00322999 /* YNExpandableCellUITests.swift */; };
 		1917E1E01E73838700322999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917E1D81E73838700322999 /* AppDelegate.swift */; };
 		1917E1E11E73838700322999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1D91E73838700322999 /* Assets.xcassets */; };
 		1917E1E21E73838700322999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1DA1E73838700322999 /* LaunchScreen.storyboard */; };
@@ -15,6 +14,13 @@
 		1917E1E41E73838700322999 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1DE1E73838700322999 /* Info.plist */; };
 		1917E1E51E73838700322999 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917E1DF1E73838700322999 /* ViewController.swift */; };
 		19B0FDFA1E739DB700AD9A99 /* YNTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDF91E739DB700AD9A99 /* YNTableView.swift */; };
+		19B0FDFF1E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */; };
+		19B0FE001E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */; };
+		19B0FE011E73A2C400AD9A99 /* YNTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDF91E739DB700AD9A99 /* YNTableView.swift */; };
+		19B0FE051E73A2D900AD9A99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19B0FE031E73A2D900AD9A99 /* Info.plist */; };
+		19B0FE061E73A2D900AD9A99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19B0FE031E73A2D900AD9A99 /* Info.plist */; };
+		19B0FE071E73A2D900AD9A99 /* YNExpandableCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FE041E73A2D900AD9A99 /* YNExpandableCellUITests.swift */; };
+		19B0FE081E73A2D900AD9A99 /* YNExpandableCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FE041E73A2D900AD9A99 /* YNExpandableCellUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +36,6 @@
 /* Begin PBXFileReference section */
 		1917E1B31E73831900322999 /* YNExpandableCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNExpandableCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1917E1C71E73831A00322999 /* YNExpandableCellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNExpandableCellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1917E1CB1E73831A00322999 /* YNExpandableCellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNExpandableCellUITests.swift; sourceTree = "<group>"; };
-		1917E1CD1E73831A00322999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1917E1D81E73838700322999 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1917E1D91E73838700322999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1917E1DB1E73838700322999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +43,9 @@
 		1917E1DE1E73838700322999 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1917E1DF1E73838700322999 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		19B0FDF91E739DB700AD9A99 /* YNTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableView.swift; sourceTree = "<group>"; };
+		19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewDelegate.swift; sourceTree = "<group>"; };
+		19B0FE031E73A2D900AD9A99 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19B0FE041E73A2D900AD9A99 /* YNExpandableCellUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNExpandableCellUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +71,7 @@
 			children = (
 				1917E1D61E73838700322999 /* YNExpandableCell */,
 				1917E1D71E73838700322999 /* YNExpandableCellDemo */,
-				1917E1CA1E73831A00322999 /* YNExpandableCellUITests */,
+				19B0FE021E73A2D900AD9A99 /* YNExpandableCellUITests */,
 				1917E1B41E73831900322999 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,19 +85,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1917E1CA1E73831A00322999 /* YNExpandableCellUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1917E1CB1E73831A00322999 /* YNExpandableCellUITests.swift */,
-				1917E1CD1E73831A00322999 /* Info.plist */,
-			);
-			path = YNExpandableCellUITests;
-			sourceTree = "<group>";
-		};
 		1917E1D61E73838700322999 /* YNExpandableCell */ = {
 			isa = PBXGroup;
 			children = (
 				19B0FDF91E739DB700AD9A99 /* YNTableView.swift */,
+				19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */,
 			);
 			name = YNExpandableCell;
 			path = YNExpandableCell/YNExpandableCell;
@@ -108,6 +107,16 @@
 			);
 			name = YNExpandableCellDemo;
 			path = YNExpandableCell/YNExpandableCellDemo;
+			sourceTree = "<group>";
+		};
+		19B0FE021E73A2D900AD9A99 /* YNExpandableCellUITests */ = {
+			isa = PBXGroup;
+			children = (
+				19B0FE031E73A2D900AD9A99 /* Info.plist */,
+				19B0FE041E73A2D900AD9A99 /* YNExpandableCellUITests.swift */,
+			);
+			name = YNExpandableCellUITests;
+			path = YNExpandableCell/YNExpandableCellUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +207,7 @@
 				1917E1E41E73838700322999 /* Info.plist in Resources */,
 				1917E1E31E73838700322999 /* Main.storyboard in Resources */,
 				1917E1E11E73838700322999 /* Assets.xcassets in Resources */,
+				19B0FE051E73A2D900AD9A99 /* Info.plist in Resources */,
 				1917E1E21E73838700322999 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B0FE061E73A2D900AD9A99 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B0FE071E73A2D900AD9A99 /* YNExpandableCellUITests.swift in Sources */,
 				19B0FDFA1E739DB700AD9A99 /* YNTableView.swift in Sources */,
+				19B0FDFF1E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */,
 				1917E1E51E73838700322999 /* ViewController.swift in Sources */,
 				1917E1E01E73838700322999 /* AppDelegate.swift in Sources */,
 			);
@@ -226,7 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1917E1CC1E73831A00322999 /* YNExpandableCellUITests.swift in Sources */,
+				19B0FE011E73A2C400AD9A99 /* YNTableView.swift in Sources */,
+				19B0FE001E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */,
+				19B0FE081E73A2D900AD9A99 /* YNExpandableCellUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
