@@ -17,10 +17,8 @@
 		19B0FDFF1E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */; };
 		19B0FE001E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */; };
 		19B0FE011E73A2C400AD9A99 /* YNTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FDF91E739DB700AD9A99 /* YNTableView.swift */; };
-		19B0FE051E73A2D900AD9A99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19B0FE031E73A2D900AD9A99 /* Info.plist */; };
-		19B0FE061E73A2D900AD9A99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19B0FE031E73A2D900AD9A99 /* Info.plist */; };
-		19B0FE071E73A2D900AD9A99 /* YNExpandableCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FE041E73A2D900AD9A99 /* YNExpandableCellUITests.swift */; };
-		19B0FE081E73A2D900AD9A99 /* YNExpandableCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FE041E73A2D900AD9A99 /* YNExpandableCellUITests.swift */; };
+		19B0FE0A1E73A9E900AD9A99 /* YNTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FE091E73A9E900AD9A99 /* YNTableViewCell.swift */; };
+		19B0FE0B1E73A9E900AD9A99 /* YNTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FE091E73A9E900AD9A99 /* YNTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +42,7 @@
 		1917E1DF1E73838700322999 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		19B0FDF91E739DB700AD9A99 /* YNTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableView.swift; sourceTree = "<group>"; };
 		19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewDelegate.swift; sourceTree = "<group>"; };
-		19B0FE031E73A2D900AD9A99 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19B0FE041E73A2D900AD9A99 /* YNExpandableCellUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNExpandableCellUITests.swift; sourceTree = "<group>"; };
+		19B0FE091E73A9E900AD9A99 /* YNTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +68,6 @@
 			children = (
 				1917E1D61E73838700322999 /* YNExpandableCell */,
 				1917E1D71E73838700322999 /* YNExpandableCellDemo */,
-				19B0FE021E73A2D900AD9A99 /* YNExpandableCellUITests */,
 				1917E1B41E73831900322999 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +86,7 @@
 			children = (
 				19B0FDF91E739DB700AD9A99 /* YNTableView.swift */,
 				19B0FDFE1E73A11600AD9A99 /* YNTableViewDelegate.swift */,
+				19B0FE091E73A9E900AD9A99 /* YNTableViewCell.swift */,
 			);
 			name = YNExpandableCell;
 			path = YNExpandableCell/YNExpandableCell;
@@ -107,16 +104,6 @@
 			);
 			name = YNExpandableCellDemo;
 			path = YNExpandableCell/YNExpandableCellDemo;
-			sourceTree = "<group>";
-		};
-		19B0FE021E73A2D900AD9A99 /* YNExpandableCellUITests */ = {
-			isa = PBXGroup;
-			children = (
-				19B0FE031E73A2D900AD9A99 /* Info.plist */,
-				19B0FE041E73A2D900AD9A99 /* YNExpandableCellUITests.swift */,
-			);
-			name = YNExpandableCellUITests;
-			path = YNExpandableCell/YNExpandableCellUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +194,6 @@
 				1917E1E41E73838700322999 /* Info.plist in Resources */,
 				1917E1E31E73838700322999 /* Main.storyboard in Resources */,
 				1917E1E11E73838700322999 /* Assets.xcassets in Resources */,
-				19B0FE051E73A2D900AD9A99 /* Info.plist in Resources */,
 				1917E1E21E73838700322999 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19B0FE061E73A2D900AD9A99 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,8 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19B0FE071E73A2D900AD9A99 /* YNExpandableCellUITests.swift in Sources */,
 				19B0FDFA1E739DB700AD9A99 /* YNTableView.swift in Sources */,
+				19B0FE0A1E73A9E900AD9A99 /* YNTableViewCell.swift in Sources */,
 				19B0FDFF1E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */,
 				1917E1E51E73838700322999 /* ViewController.swift in Sources */,
 				1917E1E01E73838700322999 /* AppDelegate.swift in Sources */,
@@ -241,7 +226,7 @@
 			files = (
 				19B0FE011E73A2C400AD9A99 /* YNTableView.swift in Sources */,
 				19B0FE001E73A11600AD9A99 /* YNTableViewDelegate.swift in Sources */,
-				19B0FE081E73A2D900AD9A99 /* YNExpandableCellUITests.swift in Sources */,
+				19B0FE0B1E73A9E900AD9A99 /* YNTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

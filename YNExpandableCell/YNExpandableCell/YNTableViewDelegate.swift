@@ -9,18 +9,16 @@
 import Foundation
 import UIKit
 
-public protocol YNTableViewDelegate {
-    func tableView(_ tableView: YNTableView, numberOfSubRowsAtIndexPath indexPath: IndexPath) -> Int
+public protocol YNTableViewDelegate: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: YNTableView, numberOfSubRowsAt indexPath: IndexPath) -> Int
     
-    func tableView(_ tableView: YNTableView, cellForSubRowAtIndexPath indexPath: IndexPath) -> UITableViewCell
-    
-    
+    func tableView(_ tableView: YNTableView, cellForSubRowAt indexPath: IndexPath) -> UITableViewCell
     
 }
 
 extension YNTableViewDelegate {
-    func tableView(_ tableView: YNTableView, heightForSubRowAtIndexPath indexPath: IndexPath) -> CGFloat { return CGFloat() }
+    func tableView(_ tableView: YNTableView, heightForSubRowAt indexPath: IndexPath) -> CGFloat { return CGFloat() }
 
-    func tableView(_ tableView: YNTableView, shouldExpandSubRowsOfCellAtIndexPath indexPath: IndexPath) -> Bool { return Bool() }
+    func tableView(_ tableView: YNTableView, shouldExpandSubRowsOfCellAt indexPath: IndexPath) -> Bool { return Bool() }
     
 }
