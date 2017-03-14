@@ -8,14 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
     @IBOutlet var yNTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.yNTableView.delegate = self
-        self.yNTableView.dataSource = self
-        
     }
 
     override func didReceiveMemoryWarning() {
