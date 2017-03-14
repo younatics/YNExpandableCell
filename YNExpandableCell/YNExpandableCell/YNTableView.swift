@@ -20,6 +20,24 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func registerCellsWith(nibNames: [String], and reuseIdentifiers: [String]) {
+        self.checkValueIsSame(first: nibNames, second: reuseIdentifiers)
+        
+        for i in 0..<nibNames.count {
+            self.register(UINib(nibName: nibNames[i], bundle: nil), forCellReuseIdentifier: reuseIdentifiers[i])
+        }
+    }
+    
+    public func registerCellsWith(cells: [AnyClass], and reuseIdentifiers: [String]) {
+        self.checkValueIsSame(first: cells, second: reuseIdentifiers)
+        
+        for i in 0..<cells.count {
+            self.register(cells[i], forCellReuseIdentifier: reuseIdentifiers[i])
+        }
+    }
+    
+    
+    
     public func initData() {
         
     }
@@ -31,6 +49,12 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         return UITableViewCell()
+    }
+    
+    private func checkValueIsSame(first: [Any], second: [Any]) {
+        if first.count != second.count {
+            fatalError("Must be same count")
+        }
     }
     
     internal func initView() {
