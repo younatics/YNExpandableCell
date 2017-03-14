@@ -16,6 +16,10 @@
 		19203BF41E782C0C006C3F0D /* YNTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19203BF01E782C0C006C3F0D /* YNTableView.swift */; };
 		19203BF51E782C0C006C3F0D /* YNTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19203BF11E782C0C006C3F0D /* YNTableViewCell.swift */; };
 		19203BF71E782C0C006C3F0D /* YNTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19203BF31E782C0C006C3F0D /* YNTableViewDelegate.swift */; };
+		19203BF91E7835F9006C3F0D /* YNExpandableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19203BF81E7835F9006C3F0D /* YNExpandableCells.swift */; };
+		19203BFB1E783667006C3F0D /* YNExpandableFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFA1E783667006C3F0D /* YNExpandableFirstCell.xib */; };
+		19203BFD1E7837A0006C3F0D /* YNExpandableSecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFC1E7837A0006C3F0D /* YNExpandableSecondCell.xib */; };
+		19203BFF1E7837AF006C3F0D /* YNExpandableThirdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFE1E7837AF006C3F0D /* YNExpandableThirdCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 		19203BF01E782C0C006C3F0D /* YNTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableView.swift; sourceTree = "<group>"; };
 		19203BF11E782C0C006C3F0D /* YNTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewCell.swift; sourceTree = "<group>"; };
 		19203BF31E782C0C006C3F0D /* YNTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewDelegate.swift; sourceTree = "<group>"; };
+		19203BF81E7835F9006C3F0D /* YNExpandableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNExpandableCells.swift; sourceTree = "<group>"; };
+		19203BFA1E783667006C3F0D /* YNExpandableFirstCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNExpandableFirstCell.xib; sourceTree = "<group>"; };
+		19203BFC1E7837A0006C3F0D /* YNExpandableSecondCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNExpandableSecondCell.xib; sourceTree = "<group>"; };
+		19203BFE1E7837AF006C3F0D /* YNExpandableThirdCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNExpandableThirdCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,10 @@
 			children = (
 				1917E1D81E73838700322999 /* AppDelegate.swift */,
 				1917E1DF1E73838700322999 /* ViewController.swift */,
+				19203BF81E7835F9006C3F0D /* YNExpandableCells.swift */,
+				19203BFA1E783667006C3F0D /* YNExpandableFirstCell.xib */,
+				19203BFC1E7837A0006C3F0D /* YNExpandableSecondCell.xib */,
+				19203BFE1E7837AF006C3F0D /* YNExpandableThirdCell.xib */,
 				1917E1D91E73838700322999 /* Assets.xcassets */,
 				1917E1DA1E73838700322999 /* LaunchScreen.storyboard */,
 				1917E1DC1E73838700322999 /* Main.storyboard */,
@@ -189,6 +201,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19203BFF1E7837AF006C3F0D /* YNExpandableThirdCell.xib in Resources */,
+				19203BFD1E7837A0006C3F0D /* YNExpandableSecondCell.xib in Resources */,
+				19203BFB1E783667006C3F0D /* YNExpandableFirstCell.xib in Resources */,
 				1917E1E41E73838700322999 /* Info.plist in Resources */,
 				1917E1E31E73838700322999 /* Main.storyboard in Resources */,
 				1917E1E11E73838700322999 /* Assets.xcassets in Resources */,
@@ -214,6 +229,7 @@
 				1917E1E51E73838700322999 /* ViewController.swift in Sources */,
 				19203BF71E782C0C006C3F0D /* YNTableViewDelegate.swift in Sources */,
 				19203BF51E782C0C006C3F0D /* YNTableViewCell.swift in Sources */,
+				19203BF91E7835F9006C3F0D /* YNExpandableCells.swift in Sources */,
 				1917E1E01E73838700322999 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

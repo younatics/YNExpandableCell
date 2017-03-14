@@ -10,14 +10,6 @@ import Foundation
 import UIKit
 
 open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
-    internal static let isExpanded = "isExpanded"
-    internal static let kSubrowsKey = "subrowsCount"
-    internal static let kDefaultCellHeight: CGFloat = 44.0
-    
-    var yNDelegate: YNTableViewDelegate?
-    var shouldExpandOnlyOneCell = false
-    var expandableCells: NSMutableDictionary?
-
     public override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         
@@ -28,8 +20,21 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         fatalError("init(coder:) has not been implemented")
     }
     
-    internal func initView() {
+    public func initData() {
         
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 0
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        return UITableViewCell()
+    }
+    
+    internal func initView() {
+    
     }
     
 
