@@ -10,9 +10,13 @@ import Foundation
 import UIKit
 
 open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
+    open var ynDelegate: YNTableViewDelegate?
+    
     public override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         
+        self.delegate = self
+        self.dataSource = self
         self.initView()
     }
     
@@ -43,7 +47,8 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 0
+        guard let delegate = self.ynDelegate else { return Int () }
+        return delegate.tableView(self, numberOfRowsInSection: section)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,7 +63,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     internal func initView() {
-    
     }
     
 
