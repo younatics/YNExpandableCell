@@ -10,18 +10,28 @@ import Foundation
 import UIKit
 
 open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
-    open var ynDelegate: YNTableViewDelegate?
+    open var ynDelegate: YNTableViewDelegate? {
+        didSet {
+            self.delegate = self
+            self.dataSource = self
+
+        }
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
     
     public override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         
-        self.delegate = self
-        self.dataSource = self
         self.initView()
     }
     
+    
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     public func registerCellsWith(nibNames: [String], and reuseIdentifiers: [String]) {
@@ -47,13 +57,13 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        guard let delegate = self.ynDelegate else { return Int () }
+        guard let delegate = self.ynDelegate else { return Int() }
         return delegate.tableView(self, numberOfRowsInSection: section)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        return UITableViewCell()
+        guard let delegate = self.ynDelegate else { return UITableViewCell() }
+        return delegate.tableView(self, cellForRowAt: indexPath)
     }
     
     private func checkValueIsSame(first: [Any], second: [Any]) {

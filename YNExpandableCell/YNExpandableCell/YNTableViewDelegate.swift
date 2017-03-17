@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-public protocol YNTableViewDelegate {
-    func tableView(_ tableView: YNTableView, numberOfRowsInSection section: Int) -> Int
-    
-    func tableView(_ tableView: YNTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: YNTableView, numberOfRowsInSection section: Int) -> Int
+//    
+//    func tableView(_ tableView: YNTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     
 }
 
