@@ -50,20 +50,9 @@ class ViewController: UIViewController, YNTableViewDelegate {
 
 
     
-//    public func tableView(_ tableView: YNTableView, numberOfRowsInSection section: Int) -> Int {
-//        return 10
-//    }
-//    
-//    public func tableView(_ tableView: YNTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: YNExpandableFirstCell.ID) as! YNExpandableFirstCell
-//        return cell
-//    }
-//    
     func initView() {
         let cells = ["YNExpandableFirstCell","YNExpandableSecondCell","YNExpandableThirdCell"]
-        for i in 0..<cells.count {
-            self.ynTableView.register(UINib(nibName: cells[i], bundle: nil), forCellReuseIdentifier: cells[i])
-        }
+        self.ynTableView.registerCellsWith(nibNames: cells, and: cells)
     }
 }
 

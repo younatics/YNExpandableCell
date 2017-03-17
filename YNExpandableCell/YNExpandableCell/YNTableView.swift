@@ -66,6 +66,12 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         return delegate.tableView(self, cellForRowAt: indexPath)
     }
     
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let delegate = self.ynDelegate else { return }
+        
+        //TDDO: Check TableViewCell and if it right, insert indexpath. -> Make internal array for TableView -> Make method for openablecell
+    }
+    
     private func checkValueIsSame(first: [Any], second: [Any]) {
         if first.count != second.count {
             fatalError("Must be same count")

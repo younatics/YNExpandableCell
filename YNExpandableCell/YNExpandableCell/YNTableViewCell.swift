@@ -6,5 +6,8 @@
 //  Copyright © 2017년 SeungyounYi. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
+class YNExpandableCell: UITableViewCell {
+    
+}
