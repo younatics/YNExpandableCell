@@ -18,6 +18,8 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
+    var openedCellCount = 0
+    
     open override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -50,10 +52,29 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-    
-    
     public func initData() {
         
+    }
+    
+    //PRAGMA MARK: YNTableView Delegate
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let delegate = self.ynDelegate else { return nil }
+        guard let titleForHeaderInSection = delegate.tableView?(self, titleForHeaderInSection: section) else { return nil }
+        
+        return titleForHeaderInSection
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard let delegate = self.ynDelegate else { return CGFloat() }
+        guard let heightForHeaderInSection = delegate.tableView?(self, heightForHeaderInSection: section) else { return CGFloat() }
+        
+        return heightForHeaderInSection
+    }
+    
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        guard let delegate = self.ynDelegate else { return Int() }
+        guard let numberOfSection = delegate.numberOfSections?(in: self) else { return Int() }
+        return numberOfSection
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -69,6 +90,12 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let delegate = self.ynDelegate else { return }
         
+        if delegate.tableView(self, cellForRowAt: indexPath) is YNExpandableCell {
+//            let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+
+            self.insertRows(at: [indexPath], with: .top)
+            self.openedCellCount += 1
+        }
         //TDDO: Check TableViewCell and if it right, insert indexpath. -> Make internal array for TableView -> Make method for openablecell
     }
     

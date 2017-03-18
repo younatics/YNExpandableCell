@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class YNExpandableFirstCell: UITableViewCell {
+class YNExpandableFirstCell: YNExpandableCell {
     static let ID = "YNExpandableFirstCell"
 
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
