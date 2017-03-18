@@ -16,22 +16,24 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hBf-az-gPj" id="Cxz-3t-fOJ">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- YNExpandable First Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euj-pS-oe3">
                         <rect key="frame" x="18" y="11" width="196" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.98039215686274506" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.23529411764705882" green="0.25098039215686274" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="euj-pS-oe3" firstAttribute="centerY" secondItem="Cxz-3t-fOJ" secondAttribute="centerY" id="DOk-JY-t3w"/>
                     <constraint firstItem="euj-pS-oe3" firstAttribute="leading" secondItem="Cxz-3t-fOJ" secondAttribute="leadingMargin" constant="10" id="bWG-wc-d98"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLabel" destination="euj-pS-oe3" id="arG-AQ-ufp"/>
+            </connections>
             <point key="canvasLocation" x="-219" y="-169"/>
         </tableViewCell>
     </objects>

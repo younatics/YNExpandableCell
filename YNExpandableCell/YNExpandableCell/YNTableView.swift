@@ -19,6 +19,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     private var expandedIndexPaths = [IndexPath]()
+    private var expandableIndexPaths = [IndexPath]()
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -84,20 +85,38 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let delegate = self.ynDelegate else { return UITableViewCell() }
+        
+        for expandedIndexPath in self.expandedIndexPaths {
+            if expandedIndexPath == indexPath {
+                let internalIndexPath = IndexPath(row: indexPath.row-1, section: indexPath.section)
+                guard let cell = delegate.tableView(self, expandCellAt: internalIndexPath) else { return UITableViewCell() }
+                return cell
+            }
+        }
+        
         return delegate.tableView(self, cellForRowAt: indexPath)
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let delegate = self.ynDelegate else { return }
         
-        if delegate.tableView(self, cellForRowAt: indexPath) is YNExpandableCell {
+        let cell = delegate.tableView(self, expandCellAt: indexPath)
+        if cell != nil {
             let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
-
+            
             self.expandedIndexPaths.append(insertIndexPath)
             self.insertRows(at: [insertIndexPath], with: .top)
         }
-        //TDDO: Check TableViewCell and if it right, insert indexpath. -> Make internal array for TableView -> Make method for openablecell
     }
+    
+//    public
+    
+//    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        guard let delegate = self.ynDelegate else { return CGFloat() }
+//        guard let heightForRowAt = delegate.tableView?(self, heightForRowAt: indexPath) else { return CGFloat() }
+//        return heightForRowAt
+//        
+//    }
     
     private func checkValueIsSame(first: [Any], second: [Any]) {
         if first.count != second.count {

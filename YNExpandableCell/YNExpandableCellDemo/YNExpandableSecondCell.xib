@@ -12,27 +12,48 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YNExpandableSecondCell" id="Jnr-ol-dVW" customClass="YNExpandableSecondCell" customModule="YNExpandableCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YNExpandableSecondCell" rowHeight="142" id="Jnr-ol-dVW" customClass="YNExpandableSecondCell" customModule="YNExpandableCell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jnr-ol-dVW" id="Fo5-0b-JZe">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- YNExpandable Second Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irc-Bc-iNg">
-                        <rect key="frame" x="18" y="11" width="220" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- YNExpanded Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irc-Bc-iNg">
+                        <rect key="frame" x="8" y="8" width="145" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Ybt-WR-seu"/>
+                            <constraint firstAttribute="width" constant="145" id="yfz-ZP-Gma"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.98039215690000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-X3-HF0">
+                        <rect key="frame" x="16" y="37" width="343" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="HGv-4u-rg0"/>
+                        </constraints>
+                    </slider>
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v2X-Dc-caI">
+                        <rect key="frame" x="16" y="85" width="343" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="QSI-l9-Omd"/>
+                        </constraints>
+                    </slider>
                 </subviews>
-                <color key="backgroundColor" red="0.23529411759999999" green="0.25098039220000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="irc-Bc-iNg" firstAttribute="leading" secondItem="Fo5-0b-JZe" secondAttribute="leadingMargin" constant="10" id="ahQ-VQ-t79"/>
-                    <constraint firstItem="irc-Bc-iNg" firstAttribute="centerY" secondItem="Fo5-0b-JZe" secondAttribute="centerY" id="heE-0F-I4U"/>
+                    <constraint firstItem="v2X-Dc-caI" firstAttribute="top" secondItem="Mhe-X3-HF0" secondAttribute="bottom" constant="18" id="Ot4-0H-ZtG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="v2X-Dc-caI" secondAttribute="trailing" constant="10" id="QGn-Yk-Bsk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Mhe-X3-HF0" secondAttribute="trailing" constant="10" id="Sfw-Kg-Jsd"/>
+                    <constraint firstItem="irc-Bc-iNg" firstAttribute="top" secondItem="Fo5-0b-JZe" secondAttribute="topMargin" id="WkC-If-ZWI"/>
+                    <constraint firstItem="Mhe-X3-HF0" firstAttribute="leading" secondItem="Fo5-0b-JZe" secondAttribute="leadingMargin" constant="10" id="X8O-bm-aQY"/>
+                    <constraint firstItem="v2X-Dc-caI" firstAttribute="leading" secondItem="Fo5-0b-JZe" secondAttribute="leadingMargin" constant="10" id="ghe-9t-drt"/>
+                    <constraint firstItem="irc-Bc-iNg" firstAttribute="leading" secondItem="Fo5-0b-JZe" secondAttribute="leadingMargin" id="r2f-ZX-qVl"/>
+                    <constraint firstItem="Mhe-X3-HF0" firstAttribute="top" secondItem="irc-Bc-iNg" secondAttribute="bottom" constant="8" id="ttu-3u-smW"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-219" y="-169"/>
+            <point key="canvasLocation" x="-219.5" y="-218"/>
         </tableViewCell>
     </objects>
 </document>

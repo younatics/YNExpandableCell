@@ -12,13 +12,10 @@ import UIKit
 public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource {
 //    func tableView(_ tableView: YNTableView, numberOfRowsInSection section: Int) -> Int
 //    
-//    func tableView(_ tableView: YNTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell?
     
 }
 
 extension YNTableViewDelegate {
-    func tableView(_ tableView: YNTableView, heightForSubRowAt indexPath: IndexPath) -> CGFloat { return CGFloat() }
-
-    func tableView(_ tableView: YNTableView, shouldExpandSubRowsOfCellAt indexPath: IndexPath) -> Bool { return Bool() }
     
 }

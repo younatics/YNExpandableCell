@@ -11,16 +11,23 @@ import UIKit
 
 class YNExpandableFirstCell: YNExpandableCell {
     static let ID = "YNExpandableFirstCell"
+    
+    @IBOutlet var titleLabel: UILabel!
 
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.selectionStyle = .none
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
 
 }
 
@@ -30,12 +37,16 @@ class YNExpandableSecondCell: UITableViewCell {
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.selectionStyle = .none
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
     
 }
 
@@ -45,11 +56,14 @@ class YNExpandableThirdCell: UITableViewCell {
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.selectionStyle = .none
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
 }

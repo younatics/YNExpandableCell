@@ -26,9 +26,17 @@ class ViewController: UIViewController, YNTableViewDelegate {
     }
 
 
+    func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNExpandableSecondCell.ID) as! YNExpandableSecondCell
+            return expandedcell
+        }
+        return nil
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: YNExpandableFirstCell.ID) as! YNExpandableFirstCell
+        cell.titleLabel.text = "Section \(indexPath.section) Row \(indexPath.row)"
         return cell
         
     }
