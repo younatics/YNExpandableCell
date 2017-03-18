@@ -57,19 +57,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     //PRAGMA MARK: YNTableView Delegate
-    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let delegate = self.ynDelegate else { return nil }
-        guard let titleForHeaderInSection = delegate.tableView?(self, titleForHeaderInSection: section) else { return nil }
-        
-        return titleForHeaderInSection
-    }
-    
-    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let delegate = self.ynDelegate else { return CGFloat() }
-        guard let heightForHeaderInSection = delegate.tableView?(self, heightForHeaderInSection: section) else { return CGFloat() }
-        
-        return heightForHeaderInSection
-    }
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         guard let delegate = self.ynDelegate else { return Int() }
