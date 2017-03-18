@@ -18,6 +18,8 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
+    private var openedIndexPaths: [IndexPath]?
+    
     var openedCellCount = 0
     
     open override func awakeFromNib() {
@@ -56,6 +58,18 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         
     }
     
+    func checkIndexPathisInRow(section: Int) -> Int {
+        var openedCellCount = 0
+        
+        guard let openedIndexPaths = self.openedIndexPaths else { return Int() }
+        
+        for openedIndexPath in openedIndexPaths {
+            if openedIndexPath.section == section {
+                
+            }
+        }
+    }
+    
     //PRAGMA MARK: YNTableView Delegate
     
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,6 +80,8 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         guard let delegate = self.ynDelegate else { return Int() }
+        guard let openedIndexPath = self.openedIndexPaths else { return Int() }
+        
         return delegate.tableView(self, numberOfRowsInSection: section)
     }
     
@@ -81,14 +97,14 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
 //            let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
 
             self.insertRows(at: [indexPath], with: .top)
-            self.openedCellCount += 1
+            self.openedIndexPaths?.append(indexPath)
         }
         //TDDO: Check TableViewCell and if it right, insert indexpath. -> Make internal array for TableView -> Make method for openablecell
     }
     
     private func checkValueIsSame(first: [Any], second: [Any]) {
         if first.count != second.count {
-            fatalError("Must be same count")
+            fatalError("Make first and second value count same")
         }
     }
     

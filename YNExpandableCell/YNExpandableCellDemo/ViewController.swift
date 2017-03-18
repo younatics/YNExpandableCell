@@ -26,17 +26,6 @@ class ViewController: UIViewController, YNTableViewDelegate {
     }
 
 
-    func addData() {
-        let dataArray = [
-            (("Section0_Row0","Row0_Subrow1","Row0_Subrow2"),
-            ("Section0_Row1"),
-            ("Section0_Row2","Row2_Subrow1","Row2_Subrow2","Row2_Subrow3")),
-            
-            (("Section1_Row0","Row0_Subrow1","Row0_Subrow2"),
-             ("Section1_Row1","Row1_Subrow1"),
-             ("Section1_Row2","Row2_Subrow1","Row2_Subrow2","Row2_Subrow3","Row2_Subrow4"))
-            ] as [Any]
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: YNExpandableFirstCell.ID) as! YNExpandableFirstCell
@@ -58,9 +47,17 @@ class ViewController: UIViewController, YNTableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return 30
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Section 0"
+        } else if section == 1 {
+            return "Section 1"
+        }
+        return ""
+    }
 
 
     

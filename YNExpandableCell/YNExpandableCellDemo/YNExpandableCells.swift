@@ -16,7 +16,6 @@ class YNExpandableFirstCell: YNExpandableCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.selectionStyle = .none
-        self.backgroundColor = UIColor.init(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -32,7 +31,6 @@ class YNExpandableSecondCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.selectionStyle = .none
-        self.backgroundColor = UIColor.init(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -48,7 +46,6 @@ class YNExpandableThirdCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.selectionStyle = .none
-        self.backgroundColor = UIColor.init(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
     }
     
     required public init?(coder aDecoder: NSCoder) {
