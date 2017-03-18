@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,21 +19,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- YNExpandable First Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euj-pS-oe3">
-                        <rect key="frame" x="18" y="11" width="196" height="21"/>
+                        <rect key="frame" x="10" y="0.0" width="355" height="43.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43.5" id="JNC-sO-ETv"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="euj-pS-oe3" firstAttribute="centerY" secondItem="Cxz-3t-fOJ" secondAttribute="centerY" id="DOk-JY-t3w"/>
-                    <constraint firstItem="euj-pS-oe3" firstAttribute="leading" secondItem="Cxz-3t-fOJ" secondAttribute="leadingMargin" constant="10" id="bWG-wc-d98"/>
+                    <constraint firstItem="euj-pS-oe3" firstAttribute="top" secondItem="Cxz-3t-fOJ" secondAttribute="top" id="8t5-am-ktW"/>
+                    <constraint firstAttribute="trailing" secondItem="euj-pS-oe3" secondAttribute="trailing" constant="10" id="IqN-sQ-t6Z"/>
+                    <constraint firstItem="euj-pS-oe3" firstAttribute="leading" secondItem="Cxz-3t-fOJ" secondAttribute="leading" constant="10" id="d0H-xw-a3H"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="titleLabel" destination="euj-pS-oe3" id="arG-AQ-ufp"/>
             </connections>
-            <point key="canvasLocation" x="-219" y="-169"/>
+            <point key="canvasLocation" x="-219.5" y="-169"/>
         </tableViewCell>
     </objects>
 </document>

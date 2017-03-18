@@ -94,7 +94,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
             }
         }
         
-        return delegate.tableView(self, cellForRowAt: indexPath)
+    return delegate.tableView(self, cellForRowAt: indexPath)
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -109,14 +109,18 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-//    public
-    
 //    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        guard let delegate = self.ynDelegate else { return CGFloat() }
-//        guard let heightForRowAt = delegate.tableView?(self, heightForRowAt: indexPath) else { return CGFloat() }
-//        return heightForRowAt
+////        guard let delegate = self.ynDelegate else { return CGFloat() }
+////        let cell = delegate.tableView(self, cellForRowAt: indexPath)
+////        return cell.frame.size.height
+//        
+//        return UITableViewAutomaticDimension
 //        
 //    }
+    
+    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
     private func checkValueIsSame(first: [Any], second: [Any]) {
         if first.count != second.count {
