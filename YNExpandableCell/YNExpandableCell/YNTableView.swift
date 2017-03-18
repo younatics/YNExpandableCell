@@ -24,6 +24,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     open override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.initView()
     }
     
     public override init(frame: CGRect, style: UITableViewStyle) {
@@ -119,6 +120,11 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
 //    }
     
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let delegate = self.ynDelegate else { return CGFloat() }
+        let cell = delegate.tableView(self, cellForRowAt: indexPath)
+        
+//        return cell.frame.size.height
+
         return UITableViewAutomaticDimension
     }
     

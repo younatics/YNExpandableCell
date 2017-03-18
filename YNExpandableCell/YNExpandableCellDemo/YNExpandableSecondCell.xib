@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,39 +18,50 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- YNExpanded Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irc-Bc-iNg">
-                        <rect key="frame" x="8" y="8" width="145" height="21"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOU-ef-pBx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- YNExpanded Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irc-Bc-iNg">
+                                <rect key="frame" x="8" y="8" width="145" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="8KV-pv-GQl"/>
+                                    <constraint firstAttribute="height" constant="21" id="kk1-7Z-rfa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-X3-HF0">
+                                <rect key="frame" x="16" y="86" width="343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Gu0-we-YB8"/>
+                                </constraints>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v2X-Dc-caI">
+                                <rect key="frame" x="16" y="37" width="343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sZb-io-jC8"/>
+                                </constraints>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Ybt-WR-seu"/>
-                            <constraint firstAttribute="width" constant="145" id="yfz-ZP-Gma"/>
+                            <constraint firstItem="Mhe-X3-HF0" firstAttribute="top" secondItem="v2X-Dc-caI" secondAttribute="bottom" constant="19" id="8aT-2g-oJV"/>
+                            <constraint firstAttribute="trailing" secondItem="v2X-Dc-caI" secondAttribute="trailing" constant="18" id="Cw8-FX-mIh"/>
+                            <constraint firstItem="v2X-Dc-caI" firstAttribute="leading" secondItem="tOU-ef-pBx" secondAttribute="leading" constant="18" id="Gil-z0-B1r"/>
+                            <constraint firstAttribute="height" constant="142" id="R5H-hR-XDA"/>
+                            <constraint firstItem="irc-Bc-iNg" firstAttribute="leading" secondItem="tOU-ef-pBx" secondAttribute="leading" constant="8" id="TZH-TJ-8wv"/>
+                            <constraint firstItem="irc-Bc-iNg" firstAttribute="top" secondItem="tOU-ef-pBx" secondAttribute="top" constant="8" id="kqh-Ff-WrS"/>
+                            <constraint firstItem="v2X-Dc-caI" firstAttribute="top" secondItem="irc-Bc-iNg" secondAttribute="bottom" constant="8" id="p5s-Q8-6BO"/>
+                            <constraint firstAttribute="trailing" secondItem="Mhe-X3-HF0" secondAttribute="trailing" constant="18" id="w45-ub-Pm6"/>
+                            <constraint firstItem="Mhe-X3-HF0" firstAttribute="leading" secondItem="tOU-ef-pBx" secondAttribute="leading" constant="18" id="yEo-mY-X48"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-X3-HF0">
-                        <rect key="frame" x="16" y="37" width="343" height="31"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="HGv-4u-rg0"/>
-                        </constraints>
-                    </slider>
-                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v2X-Dc-caI">
-                        <rect key="frame" x="16" y="85" width="343" height="31"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="QSI-l9-Omd"/>
-                        </constraints>
-                    </slider>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="v2X-Dc-caI" firstAttribute="top" secondItem="Mhe-X3-HF0" secondAttribute="bottom" constant="18" id="Ot4-0H-ZtG"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="v2X-Dc-caI" secondAttribute="trailing" constant="10" id="QGn-Yk-Bsk"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Mhe-X3-HF0" secondAttribute="trailing" constant="10" id="Sfw-Kg-Jsd"/>
-                    <constraint firstItem="irc-Bc-iNg" firstAttribute="top" secondItem="Fo5-0b-JZe" secondAttribute="topMargin" id="WkC-If-ZWI"/>
-                    <constraint firstItem="Mhe-X3-HF0" firstAttribute="leading" secondItem="Fo5-0b-JZe" secondAttribute="leadingMargin" constant="10" id="X8O-bm-aQY"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="v2X-Dc-caI" secondAttribute="bottom" constant="18.5" id="fjk-HE-2Sv"/>
-                    <constraint firstItem="v2X-Dc-caI" firstAttribute="leading" secondItem="Fo5-0b-JZe" secondAttribute="leadingMargin" constant="10" id="ghe-9t-drt"/>
-                    <constraint firstItem="irc-Bc-iNg" firstAttribute="leading" secondItem="Fo5-0b-JZe" secondAttribute="leadingMargin" id="r2f-ZX-qVl"/>
-                    <constraint firstItem="Mhe-X3-HF0" firstAttribute="top" secondItem="irc-Bc-iNg" secondAttribute="bottom" constant="8" id="ttu-3u-smW"/>
+                    <constraint firstAttribute="trailing" secondItem="tOU-ef-pBx" secondAttribute="trailing" id="9tE-ms-k9u"/>
+                    <constraint firstItem="tOU-ef-pBx" firstAttribute="top" secondItem="Fo5-0b-JZe" secondAttribute="top" id="P6O-RR-0Hj"/>
+                    <constraint firstItem="tOU-ef-pBx" firstAttribute="leading" secondItem="Fo5-0b-JZe" secondAttribute="leading" id="fiz-O3-03A"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="-219.5" y="-218"/>
