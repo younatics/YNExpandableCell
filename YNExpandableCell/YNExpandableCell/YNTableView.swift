@@ -18,9 +18,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-    private var openedIndexPaths: [IndexPath]?
-    
-    var openedCellCount = 0
+    private var expandedIndexPaths = [IndexPath]()
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -58,16 +56,16 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         
     }
     
-    func checkIndexPathisInRow(section: Int) -> Int {
+    internal func checkExpandRowIn(section: Int) -> Int {
         var openedCellCount = 0
         
-        guard let openedIndexPaths = self.openedIndexPaths else { return Int() }
-        
-        for openedIndexPath in openedIndexPaths {
-            if openedIndexPath.section == section {
-                
+        for expandedIndexPaths in self.expandedIndexPaths {
+            if expandedIndexPaths.section == section {
+                openedCellCount += 1
             }
         }
+        
+        return openedCellCount
     }
     
     //PRAGMA MARK: YNTableView Delegate
@@ -80,9 +78,8 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         guard let delegate = self.ynDelegate else { return Int() }
-        guard let openedIndexPath = self.openedIndexPaths else { return Int() }
         
-        return delegate.tableView(self, numberOfRowsInSection: section)
+        return delegate.tableView(self, numberOfRowsInSection: section) + self.checkExpandRowIn(section: section)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,10 +91,10 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         guard let delegate = self.ynDelegate else { return }
         
         if delegate.tableView(self, cellForRowAt: indexPath) is YNExpandableCell {
-//            let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
 
-            self.insertRows(at: [indexPath], with: .top)
-            self.openedIndexPaths?.append(indexPath)
+            self.expandedIndexPaths.append(insertIndexPath)
+            self.insertRows(at: [insertIndexPath], with: .top)
         }
         //TDDO: Check TableViewCell and if it right, insert indexpath. -> Make internal array for TableView -> Make method for openablecell
     }

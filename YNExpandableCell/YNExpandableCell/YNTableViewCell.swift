@@ -9,5 +9,23 @@
 import UIKit
 
 class YNExpandableCell: UITableViewCell {
+    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.initView()
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.initView()
+    }
+    
+    public func initView() {
+        self.selectionStyle = .none
+    }
 }
