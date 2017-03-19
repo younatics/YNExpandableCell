@@ -16,7 +16,7 @@ Easiest usage of expandable & collapsible cell for iOS, written in Swift 3. You 
                         DESC
 
   s.homepage         = 'https://github.com/younatics/YNExpandableCell'
-  s.screenshots      = 'https://github.com/younatics/YNExpandableCell/blob/master/Images/YNExpandableCell.gif'
+  s.screenshots      = 'https://github.com/younatics/YNExpandableCell/blob/master/Images/YNExpandableCell.PNG'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { "Seungyoun Yi" => "younatics@gmail.com" }
 
