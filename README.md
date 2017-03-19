@@ -13,7 +13,7 @@
 See [CHANGELOG](https://github.com/younatics/YNExpandableCell/blob/master/CHANGELOG.md) for details
 
 ## Intoduction
-The most easiest usage of expandable&collapsable cell for iOS, written in Swift 3. You can customize expandable `UITableViewCell` whatever you like.
+Easiest usage of expandable&collapsable cell for iOS, written in Swift 3. You can customize expandable `UITableViewCell` whatever you like.
 
 ## Requirements
 
