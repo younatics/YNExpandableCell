@@ -62,6 +62,7 @@
                     <constraint firstAttribute="trailing" secondItem="tOU-ef-pBx" secondAttribute="trailing" id="9tE-ms-k9u"/>
                     <constraint firstItem="tOU-ef-pBx" firstAttribute="top" secondItem="Fo5-0b-JZe" secondAttribute="top" id="P6O-RR-0Hj"/>
                     <constraint firstItem="tOU-ef-pBx" firstAttribute="leading" secondItem="Fo5-0b-JZe" secondAttribute="leading" id="fiz-O3-03A"/>
+                    <constraint firstAttribute="bottom" secondItem="tOU-ef-pBx" secondAttribute="bottom" constant="-0.5" id="xtc-Uc-7PD"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="-219.5" y="-218"/>
