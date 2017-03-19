@@ -20,6 +20,7 @@
 		19203BFB1E783667006C3F0D /* YNExpandableFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFA1E783667006C3F0D /* YNExpandableFirstCell.xib */; };
 		19203BFD1E7837A0006C3F0D /* YNExpandableSecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFC1E7837A0006C3F0D /* YNExpandableSecondCell.xib */; };
 		19203BFF1E7837AF006C3F0D /* YNExpandableThirdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFE1E7837AF006C3F0D /* YNExpandableThirdCell.xib */; };
+		19B47FC31E7E4C13001A91CF /* YNExpandableCell.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B47FC21E7E4C13001A91CF /* YNExpandableCell.xcassets */; };
 		19F0E4C71E7CCCFC00185897 /* YNTableViewExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0E4C61E7CCCFC00185897 /* YNTableViewExtenstion.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		19203BFA1E783667006C3F0D /* YNExpandableFirstCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNExpandableFirstCell.xib; sourceTree = "<group>"; };
 		19203BFC1E7837A0006C3F0D /* YNExpandableSecondCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNExpandableSecondCell.xib; sourceTree = "<group>"; };
 		19203BFE1E7837AF006C3F0D /* YNExpandableThirdCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNExpandableThirdCell.xib; sourceTree = "<group>"; };
+		19B47FC21E7E4C13001A91CF /* YNExpandableCell.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YNExpandableCell.xcassets; sourceTree = "<group>"; };
 		19F0E4C61E7CCCFC00185897 /* YNTableViewExtenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewExtenstion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 		1917E1D61E73838700322999 /* YNExpandableCell */ = {
 			isa = PBXGroup;
 			children = (
+				19B47FC21E7E4C13001A91CF /* YNExpandableCell.xcassets */,
 				19203BF01E782C0C006C3F0D /* YNTableView.swift */,
 				19F0E4C61E7CCCFC00185897 /* YNTableViewExtenstion.swift */,
 				19203BF11E782C0C006C3F0D /* YNTableViewCell.swift */,
@@ -204,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B47FC31E7E4C13001A91CF /* YNExpandableCell.xcassets in Resources */,
 				19203BFF1E7837AF006C3F0D /* YNExpandableThirdCell.xib in Resources */,
 				19203BFD1E7837A0006C3F0D /* YNExpandableSecondCell.xib in Resources */,
 				19203BFB1E783667006C3F0D /* YNExpandableFirstCell.xib in Resources */,

@@ -26,7 +26,9 @@ class YNExpandableCell: UITableViewCell {
     }
     
     public func initView() {
+        let customAccessoryType = UIImageView(frame: CGRect(x: 0, y: 0, width: 26, height: 26))
+        customAccessoryType.image = UIImage(named: "yn_nor")
         self.selectionStyle = .none
-//        self.accessoryType = .detailButton
+        self.accessoryView = customAccessoryType
     }
 }

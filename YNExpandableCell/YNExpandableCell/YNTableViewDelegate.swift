@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: YNTableView, numberOfRowsInSection section: Int) -> Int
-//    
     func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell?
     
 }

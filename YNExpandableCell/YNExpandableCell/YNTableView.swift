@@ -104,11 +104,23 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         
         let cell = delegate.tableView(self, expandCellAt: selectedIndexPath)
         if cell != nil {
-            let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            for expandedIndexPath in self.expandedIndexPaths {
+                if expandedIndexPath != indexPath {
+                    let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+                    self.expandedIndexPaths.append(insertIndexPath)
+                    self.insertRows(at: [insertIndexPath], with: .top)
+                    self.expandedIndexPathsSelectAfter(current: indexPath)
+                    break
+                }
+            }
             
-            self.expandedIndexPaths.append(insertIndexPath)
-            self.insertRows(at: [insertIndexPath], with: .top)
-            self.expandedIndexPathsSelectAfter(current: indexPath)
+            if self.expandedIndexPaths.isEmpty {
+                let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+                self.expandedIndexPaths.append(insertIndexPath)
+                self.insertRows(at: [insertIndexPath], with: .top)
+                self.expandedIndexPathsSelectAfter(current: indexPath)
+
+            }
         }
         print(self.expandedIndexPaths)
 

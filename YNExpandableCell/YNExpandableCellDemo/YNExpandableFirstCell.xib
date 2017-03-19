@@ -15,15 +15,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hBf-az-gPj" id="Cxz-3t-fOJ">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- YNExpandable First Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euj-pS-oe3">
-                        <rect key="frame" x="10" y="0.0" width="355" height="43.5"/>
+                        <rect key="frame" x="20" y="0.0" width="345" height="43.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="43.5" id="JNC-sO-ETv"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -31,7 +31,7 @@
                 <constraints>
                     <constraint firstItem="euj-pS-oe3" firstAttribute="top" secondItem="Cxz-3t-fOJ" secondAttribute="top" id="8t5-am-ktW"/>
                     <constraint firstAttribute="trailing" secondItem="euj-pS-oe3" secondAttribute="trailing" constant="10" id="IqN-sQ-t6Z"/>
-                    <constraint firstItem="euj-pS-oe3" firstAttribute="leading" secondItem="Cxz-3t-fOJ" secondAttribute="leading" constant="10" id="d0H-xw-a3H"/>
+                    <constraint firstItem="euj-pS-oe3" firstAttribute="leading" secondItem="Cxz-3t-fOJ" secondAttribute="leading" constant="20" id="d0H-xw-a3H"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

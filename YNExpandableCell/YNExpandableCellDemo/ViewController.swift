@@ -41,17 +41,19 @@ class ViewController: UIViewController, YNTableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: YNExpandableFirstCell.ID) as! YNExpandableFirstCell
+        let expandableCell = tableView.dequeueReusableCell(withIdentifier: YNExpandableFirstCell.ID) as! YNExpandableFirstCell
         if indexPath.section == 0 && indexPath.row == 1 {
-            cell.titleLabel.text = "YNExpandable Second Cell"
+            expandableCell.titleLabel.text = "YNExpandable Second Cell"
         } else if indexPath.section == 0 && indexPath.row == 2 {
-            cell.titleLabel.text = "YNExpandable Third Cell"
+            expandableCell.titleLabel.text = "YNExpandable Third Cell"
         } else if indexPath.section == 0 && indexPath.row == 4 {
-            cell.titleLabel.text = "YNExpandable Third Cell"
+            expandableCell.titleLabel.text = "YNExpandable Third Cell"
         } else {
-           cell.titleLabel.text = "YNSection \(indexPath.section) Row \(indexPath.row)"
+            let nonExpandablecell = tableView.dequeueReusableCell(withIdentifier: "YNNonExpandableCell")
+            nonExpandablecell?.textLabel?.text = "YNNonExpandableCell Row \(indexPath.row)"
+            return nonExpandablecell!
         }
-        return cell
+        return expandableCell
         
     }
     
@@ -86,6 +88,7 @@ class ViewController: UIViewController, YNTableViewDelegate {
     func initView() {
         let cells = ["YNExpandableFirstCell","YNExpandableSecondCell","YNExpandableThirdCell"]
         self.ynTableView.registerCellsWith(nibNames: cells, and: cells)
+        self.ynTableView.registerCellsWith(cells: [UITableViewCell.self as AnyClass], and: ["YNNonExpandableCell"])
     }
 }
 
