@@ -10,17 +10,16 @@ import Foundation
 import UIKit
 
 open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
+    private var expandedIndexPaths = [IndexPath]()
+
     open var ynDelegate: YNTableViewDelegate? {
         didSet {
             self.delegate = self
             self.dataSource = self
-
         }
     }
     
     open var ynTableViewRowAnimation = UITableViewRowAnimation.top
-    
-    private var expandedIndexPaths = [IndexPath]()
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,7 +54,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-    internal func checkExpandRowIn(section: Int) -> Int {
+    private func checkExpandRowIn(section: Int) -> Int {
         var openedCellCount = 0
         
         for expandedIndexPaths in self.expandedIndexPaths {
@@ -68,7 +67,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     //PRAGMA MARK: YNTableView Delegate
-    
     public func numberOfSections(in tableView: UITableView) -> Int {
         guard let delegate = self.ynDelegate else { return Int() }
         guard let numberOfSection = delegate.numberOfSections?(in: self) else { return Int() }
@@ -127,16 +125,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-    private func didSelectRowLogicAt(indexPath: IndexPath) {
-        let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
-        self.expandedIndexPaths.append(insertIndexPath)
-        self.insertRows(at: [insertIndexPath], with: .top)
-        self.expandedIndexPathsSelectAfter(current: indexPath)
-        
-        guard let ynExpandableCell = cellForRow(at: indexPath) as? YNExpandableCell else { return }
-        ynExpandableCell.selected()
-    }
-    
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         for expandedIndexPath in self.expandedIndexPaths {
             let internalIndexPath =  IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
@@ -160,7 +148,16 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     //PRAGMA MARK: YNTableView Logic
-    
+    private func didSelectRowLogicAt(indexPath: IndexPath) {
+        let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+        self.expandedIndexPaths.append(insertIndexPath)
+        self.insertRows(at: [insertIndexPath], with: .top)
+        self.expandedIndexPathsSelectAfter(current: indexPath)
+        
+        guard let ynExpandableCell = cellForRow(at: indexPath) as? YNExpandableCell else { return }
+        ynExpandableCell.selected()
+    }
+
     private func expandedIndexPathsSelectAfter(current indexPath: IndexPath) {
         for expandedIndexPath in self.expandedIndexPaths {
             if expandedIndexPath.section == indexPath.section {

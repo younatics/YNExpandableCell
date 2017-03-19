@@ -16,12 +16,13 @@ Pod::Spec.new do |s|
                         DESC
 
   s.homepage         = 'https://github.com/younatics/YNExpandableCell'
-  s.screenshots      = 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/Images/YNDropDownMenu.gif', 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/Images/YNDropDownMenu2.gif', 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/Images/YNDropDownMenu3.gif'
+  s.screenshots      = 'https://raw.githubusercontent.com/younatics/YNExpandableCell/master/Images/YNExpandableCell.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { "Seungyoun Yi" => "younatics@gmail.com" }
 
   s.source           = { :git => 'https://github.com/younatics/YNExpandableCell.git', :tag => s.version.to_s }
   s.source_files     = 'YNExpandableCell/YNExpandableCell/*.swift'
+  s.resources        = "YNExpandableCell/YNExpandableCell/*.xcassets"
 
   s.ios.deployment_target = '8.0'
 
