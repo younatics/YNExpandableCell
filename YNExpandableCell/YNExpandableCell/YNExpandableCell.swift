@@ -38,7 +38,7 @@ public class YNExpandableCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    public func ynSelected() {
+    public func selected() {
         self.customAccessoryType.image = UIImage(named: "yn_sel")
         self.layoutIfNeeded()
 

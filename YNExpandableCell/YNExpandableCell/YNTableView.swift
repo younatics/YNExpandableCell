@@ -125,11 +125,10 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         self.insertRows(at: [insertIndexPath], with: .top)
         self.expandedIndexPathsSelectAfter(current: indexPath)
         
-        
-        guard let delegate = self.ynDelegate else { return }
         let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
-        guard let ynExpandableCell = delegate.tableView(self, cellForRowAt: selectedIndexPath) as? YNExpandableCell else { return }
-        ynExpandableCell.ynSelected()
+        guard let ynExpandableCell = cellForRow(at: selectedIndexPath) as? YNExpandableCell else { return }
+
+        ynExpandableCell.selected()
 
     }
     
