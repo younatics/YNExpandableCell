@@ -19,7 +19,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     private var expandedIndexPaths = [IndexPath]()
-    private var expandableIndexPaths = [IndexPath]()
+//    private var expandableIndexPaths = [IndexPath]()
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -110,21 +110,22 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-//    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-////        guard let delegate = self.ynDelegate else { return CGFloat() }
-////        let cell = delegate.tableView(self, cellForRowAt: indexPath)
-////        return cell.frame.size.height
-//        
-//        return UITableViewAutomaticDimension
-//        
-//    }
+    public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        for expandedIndexPath in self.expandedIndexPaths {
+            let internalIndexPath =  IndexPath(row: expandedIndexPath.row-1, section: expandedIndexPath.section)
+            
+            if internalIndexPath == indexPath {
+                let index = self.expandedIndexPaths.index(of: expandedIndexPath)
+                guard let _index = index else { return }
+                self.expandedIndexPaths.remove(at: _index)
+
+                self.deleteRows(at: [expandedIndexPath], with: .top)
+            }
+            
+        }
+    }
     
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let delegate = self.ynDelegate else { return CGFloat() }
-        let cell = delegate.tableView(self, cellForRowAt: indexPath)
-        
-//        return cell.frame.size.height
-
         return UITableViewAutomaticDimension
     }
     
@@ -135,6 +136,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     internal func initView() {
+        self.allowsMultipleSelection = true
     }
     
 
