@@ -17,7 +17,6 @@ class YNExpandableCellEx: YNExpandableCell {
 
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -27,20 +26,6 @@ class YNExpandableCellEx: YNExpandableCell {
     public override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    
-    public override func selected() {
-        self.customAccessoryType.alpha = 1
-        UIView.animate(withDuration: 0.5, animations: {
-                        self.customAccessoryType.alpha = 0
-//                        self.customAccessoryType.image = UIImage(named: "yn_sel")
-        }) { (completed) in
-            
-        }
-        
-    }
-    
-
 }
 
 class YNSliderCell: UITableViewCell {
@@ -57,6 +42,8 @@ class YNSliderCell: UITableViewCell {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
+
     }
 
     
@@ -76,6 +63,8 @@ class YNSegmentCell: UITableViewCell {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
+
     }
 
 }

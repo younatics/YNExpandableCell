@@ -90,6 +90,14 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
             }
         }
         
+        for expandedIndexPath in self.expandedIndexPaths {
+            let internalIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
+            if expandedIndexPath == internalIndexPath {
+                return delegate.tableView(self, cellForRowAt: internalIndexPath)
+            }
+            
+        }
+        
         return delegate.tableView(self, cellForRowAt: indexPath)
     }
     
@@ -152,7 +160,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     //PRAGMA MARK: YNTableView Logic
-
     
     private func expandedIndexPathsSelectAfter(current indexPath: IndexPath) {
         for expandedIndexPath in self.expandedIndexPaths {

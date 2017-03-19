@@ -58,7 +58,7 @@ class ViewController: UIViewController, YNTableViewDelegate {
             expandableCell.titleLabel.text = "YNSlider Cell"
         } else {
             let nonExpandablecell = tableView.dequeueReusableCell(withIdentifier: "YNNonExpandableCell")
-            nonExpandablecell?.textLabel?.text = "YNNonExpandableCell Row \(indexPath.row)"
+            nonExpandablecell?.textLabel?.text = "YNNonExpandable Cell"
             nonExpandablecell?.selectionStyle = .none
             return nonExpandablecell!
         }
