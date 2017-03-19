@@ -129,13 +129,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         guard let delegate = self.ynDelegate else { return }
         let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
         guard let ynExpandableCell = delegate.tableView(self, cellForRowAt: selectedIndexPath) as? YNExpandableCell else { return }
-        print(selectedIndexPath)
-        print(ynExpandableCell.subviews)
-//        for view in ynExpandableCell.subviews {
-//            guard let imageView = view as? UIImageView else { return }
-//                imageView.backgroundColor = UIColor.blue
-//        }
-        ynExpandableCell.backgroundColor = UIColor.blue
         ynExpandableCell.ynSelected()
 
     }
