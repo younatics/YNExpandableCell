@@ -26,7 +26,7 @@ class YNExpandableCell: UITableViewCell {
     }
     
     public func initView() {
-//        self.selectionStyle = .none
-        self.accessoryType = .detailButton
+        self.selectionStyle = .none
+//        self.accessoryType = .detailButton
     }
 }

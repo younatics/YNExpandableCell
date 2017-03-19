@@ -19,7 +19,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     private var expandedIndexPaths = [IndexPath]()
-//    private var expandableIndexPaths = [IndexPath]()
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -89,44 +88,84 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         
         for expandedIndexPath in self.expandedIndexPaths {
             if expandedIndexPath == indexPath {
-                let internalIndexPath = IndexPath(row: indexPath.row-1, section: indexPath.section)
+                let internalIndexPath = IndexPath(row: indexPath.row - 1 - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
                 guard let cell = delegate.tableView(self, expandCellAt: internalIndexPath) else { return UITableViewCell() }
                 return cell
             }
         }
         
-    return delegate.tableView(self, cellForRowAt: indexPath)
+        return delegate.tableView(self, cellForRowAt: indexPath)
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let delegate = self.ynDelegate else { return }
         
-        let cell = delegate.tableView(self, expandCellAt: indexPath)
+        let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
+        
+        let cell = delegate.tableView(self, expandCellAt: selectedIndexPath)
         if cell != nil {
             let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
             
             self.expandedIndexPaths.append(insertIndexPath)
             self.insertRows(at: [insertIndexPath], with: .top)
         }
+        print(self.expandedIndexPaths)
+
     }
     
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         for expandedIndexPath in self.expandedIndexPaths {
-            let internalIndexPath =  IndexPath(row: expandedIndexPath.row-1, section: expandedIndexPath.section)
+            let internalIndexPath =  IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
             
             if internalIndexPath == indexPath {
                 let index = self.expandedIndexPaths.index(of: expandedIndexPath)
                 guard let _index = index else { return }
                 self.expandedIndexPaths.remove(at: _index)
-
                 self.deleteRows(at: [expandedIndexPath], with: .top)
+                self.expandedIndexPathsAfter(current: indexPath)
             }
-            
         }
+        print(self.expandedIndexPaths)
+
+
     }
     
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    private func expandedIndexPathsAfter(current indexPath: IndexPath) {
+        for expandedIndexPath in self.expandedIndexPaths {
+            if expandedIndexPath.section == indexPath.section {
+                if expandedIndexPath.row > indexPath.row {
+                    let index = self.expandedIndexPaths.index(of: expandedIndexPath)
+                    guard let _index = index else { return }
+                    
+                    let indexPath = IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
+                    self.expandedIndexPaths[_index] = indexPath
+                    
+                } else if expandedIndexPath.row < indexPath.row {
+//                    let index = self.expandedIndexPaths.index(of: expandedIndexPath)
+//                    guard let _index = index else { return }
+//                    
+//                    let indexPath = IndexPath(row: expandedIndexPath.row + 1, section: expandedIndexPath.section)
+//                    self.expandedIndexPaths[_index] = indexPath
+                }
+            }
+        }
+    }
+    
+    private func expandedRowCountSince(current indexPath: IndexPath) -> Int {
+        var expandCount = 0
+        for expandedIndexPath in self.expandedIndexPaths {
+            if expandedIndexPath.section == indexPath.section {
+                if expandedIndexPath.row < indexPath.row {
+                    expandCount += 1
+                }
+            }
+        }
+
+        return expandCount
     }
     
     private func checkValueIsSame(first: [Any], second: [Any]) {
@@ -135,9 +174,8 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-    internal func initView() {
+    private func initView() {
         self.allowsMultipleSelection = true
     }
     
-
 }

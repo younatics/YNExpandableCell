@@ -30,13 +30,27 @@ class ViewController: UIViewController, YNTableViewDelegate {
         if indexPath.section == 0 && indexPath.row == 1 {
             let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNExpandableSecondCell.ID) as! YNExpandableSecondCell
             return expandedcell
+        } else if indexPath.section == 0 && indexPath.row == 2 {
+            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNExpandableThirdCell.ID) as! YNExpandableThirdCell
+            return expandedcell
+        } else if indexPath.section == 0 && indexPath.row == 4 {
+            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNExpandableThirdCell.ID) as! YNExpandableThirdCell
+            return expandedcell
         }
         return nil
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: YNExpandableFirstCell.ID) as! YNExpandableFirstCell
-        cell.titleLabel.text = "Section \(indexPath.section) Row \(indexPath.row)"
+        if indexPath.section == 0 && indexPath.row == 1 {
+            cell.titleLabel.text = "YNExpandable Second Cell"
+        } else if indexPath.section == 0 && indexPath.row == 2 {
+            cell.titleLabel.text = "YNExpandable Third Cell"
+        } else if indexPath.section == 0 && indexPath.row == 4 {
+            cell.titleLabel.text = "YNExpandable Third Cell"
+        } else {
+           cell.titleLabel.text = "YNSection \(indexPath.section) Row \(indexPath.row)"
+        }
         return cell
         
     }
