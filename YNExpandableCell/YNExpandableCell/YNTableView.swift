@@ -93,6 +93,14 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
         
         let internalIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
+
+        if let ynExpandableCell = delegate.tableView(self, cellForRowAt: internalIndexPath) as? YNExpandableCell {
+            let checkSelectedIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            if self.expandedIndexPaths.contains(checkSelectedIndexPath) {
+                ynExpandableCell.selected()
+                return ynExpandableCell
+            }
+        }
         return delegate.tableView(self, cellForRowAt: internalIndexPath)
         
     }
@@ -127,7 +135,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         
         guard let ynExpandableCell = cellForRow(at: indexPath) as? YNExpandableCell else { return }
         ynExpandableCell.selected()
-
     }
     
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
