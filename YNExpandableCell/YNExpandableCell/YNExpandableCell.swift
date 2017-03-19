@@ -8,14 +8,14 @@
 
 import UIKit
 
-class YNExpandableCell: UITableViewCell {
+public class YNExpandableCell: UITableViewCell {
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.initView()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

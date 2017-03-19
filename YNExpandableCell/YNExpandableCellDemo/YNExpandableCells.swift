@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class YNExpandableFirstCell: YNExpandableCell {
-    static let ID = "YNExpandableFirstCell"
+class YNExpandableCellEx: YNExpandableCell {
+    static let ID = "YNExpandableCellEx"
     
     @IBOutlet var titleLabel: UILabel!
 
@@ -31,8 +31,8 @@ class YNExpandableFirstCell: YNExpandableCell {
 
 }
 
-class YNExpandableSecondCell: UITableViewCell {
-    static let ID = "YNExpandableSecondCell"
+class YNSliderCell: UITableViewCell {
+    static let ID = "YNSliderCell"
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -50,8 +50,8 @@ class YNExpandableSecondCell: UITableViewCell {
     
 }
 
-class YNExpandableThirdCell: UITableViewCell {
-    static let ID = "YNExpandableThirdCell"
+class YNSegmentCell: UITableViewCell {
+    static let ID = "YNSegmentCell"
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

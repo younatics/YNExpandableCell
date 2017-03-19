@@ -28,29 +28,40 @@ class ViewController: UIViewController, YNTableViewDelegate {
 
     func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? {
         if indexPath.section == 0 && indexPath.row == 1 {
-            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNExpandableSecondCell.ID) as! YNExpandableSecondCell
+            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
             return expandedcell
         } else if indexPath.section == 0 && indexPath.row == 2 {
-            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNExpandableThirdCell.ID) as! YNExpandableThirdCell
+            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
             return expandedcell
         } else if indexPath.section == 0 && indexPath.row == 4 {
-            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNExpandableThirdCell.ID) as! YNExpandableThirdCell
+            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
+            return expandedcell
+        } else if indexPath.section == 1 && indexPath.row == 0 {
+            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
+            return expandedcell
+        } else if indexPath.section == 1 && indexPath.row == 1 {
+            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
             return expandedcell
         }
         return nil
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let expandableCell = tableView.dequeueReusableCell(withIdentifier: YNExpandableFirstCell.ID) as! YNExpandableFirstCell
+        let expandableCell = tableView.dequeueReusableCell(withIdentifier: YNExpandableCellEx.ID) as! YNExpandableCellEx
         if indexPath.section == 0 && indexPath.row == 1 {
-            expandableCell.titleLabel.text = "YNExpandable Second Cell"
+            expandableCell.titleLabel.text = "YNSlider Cell"
         } else if indexPath.section == 0 && indexPath.row == 2 {
-            expandableCell.titleLabel.text = "YNExpandable Third Cell"
+            expandableCell.titleLabel.text = "YNSegment Cell"
         } else if indexPath.section == 0 && indexPath.row == 4 {
-            expandableCell.titleLabel.text = "YNExpandable Third Cell"
+            expandableCell.titleLabel.text = "YNSegment Cell"
+        } else if indexPath.section == 1 && indexPath.row == 0 {
+            expandableCell.titleLabel.text = "YNSegment Cell"
+        } else if indexPath.section == 1 && indexPath.row == 1 {
+            expandableCell.titleLabel.text = "YNSlider Cell"
         } else {
             let nonExpandablecell = tableView.dequeueReusableCell(withIdentifier: "YNNonExpandableCell")
             nonExpandablecell?.textLabel?.text = "YNNonExpandableCell Row \(indexPath.row)"
+            nonExpandablecell?.selectionStyle = .none
             return nonExpandablecell!
         }
         return expandableCell
@@ -86,7 +97,7 @@ class ViewController: UIViewController, YNTableViewDelegate {
 
     
     func initView() {
-        let cells = ["YNExpandableFirstCell","YNExpandableSecondCell","YNExpandableThirdCell"]
+        let cells = ["YNExpandableCellEx","YNSliderCell","YNSegmentCell"]
         self.ynTableView.registerCellsWith(nibNames: cells, and: cells)
         self.ynTableView.registerCellsWith(cells: [UITableViewCell.self as AnyClass], and: ["YNNonExpandableCell"])
     }

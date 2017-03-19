@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YNExpandableSecondCell" rowHeight="142" id="Jnr-ol-dVW" customClass="YNExpandableSecondCell" customModule="YNExpandableCell" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YNSliderCell" rowHeight="142" id="Jnr-ol-dVW" customClass="YNSliderCell" customModule="YNExpandableCell" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jnr-ol-dVW" id="Fo5-0b-JZe">
@@ -21,24 +21,24 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOU-ef-pBx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- YNExpanded Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irc-Bc-iNg">
-                                <rect key="frame" x="8" y="8" width="145" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cutomize UISlider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irc-Bc-iNg">
+                                <rect key="frame" x="20" y="8" width="145" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="8KV-pv-GQl"/>
                                     <constraint firstAttribute="height" constant="21" id="kk1-7Z-rfa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-X3-HF0">
-                                <rect key="frame" x="16" y="86" width="343" height="31"/>
+                                <rect key="frame" x="18" y="86" width="339" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Gu0-we-YB8"/>
                                 </constraints>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v2X-Dc-caI">
-                                <rect key="frame" x="16" y="37" width="343" height="31"/>
+                                <rect key="frame" x="18" y="37" width="339" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sZb-io-jC8"/>
                                 </constraints>
@@ -47,14 +47,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Mhe-X3-HF0" firstAttribute="top" secondItem="v2X-Dc-caI" secondAttribute="bottom" constant="19" id="8aT-2g-oJV"/>
-                            <constraint firstAttribute="trailing" secondItem="v2X-Dc-caI" secondAttribute="trailing" constant="18" id="Cw8-FX-mIh"/>
-                            <constraint firstItem="v2X-Dc-caI" firstAttribute="leading" secondItem="tOU-ef-pBx" secondAttribute="leading" constant="18" id="Gil-z0-B1r"/>
+                            <constraint firstAttribute="trailing" secondItem="v2X-Dc-caI" secondAttribute="trailing" constant="20" id="Cw8-FX-mIh"/>
+                            <constraint firstItem="v2X-Dc-caI" firstAttribute="leading" secondItem="tOU-ef-pBx" secondAttribute="leading" constant="20" id="Gil-z0-B1r"/>
                             <constraint firstAttribute="height" constant="142" id="R5H-hR-XDA"/>
-                            <constraint firstItem="irc-Bc-iNg" firstAttribute="leading" secondItem="tOU-ef-pBx" secondAttribute="leading" constant="8" id="TZH-TJ-8wv"/>
+                            <constraint firstItem="irc-Bc-iNg" firstAttribute="leading" secondItem="tOU-ef-pBx" secondAttribute="leading" constant="20" id="TZH-TJ-8wv"/>
                             <constraint firstItem="irc-Bc-iNg" firstAttribute="top" secondItem="tOU-ef-pBx" secondAttribute="top" constant="8" id="kqh-Ff-WrS"/>
                             <constraint firstItem="v2X-Dc-caI" firstAttribute="top" secondItem="irc-Bc-iNg" secondAttribute="bottom" constant="8" id="p5s-Q8-6BO"/>
-                            <constraint firstAttribute="trailing" secondItem="Mhe-X3-HF0" secondAttribute="trailing" constant="18" id="w45-ub-Pm6"/>
-                            <constraint firstItem="Mhe-X3-HF0" firstAttribute="leading" secondItem="tOU-ef-pBx" secondAttribute="leading" constant="18" id="yEo-mY-X48"/>
+                            <constraint firstAttribute="trailing" secondItem="Mhe-X3-HF0" secondAttribute="trailing" constant="20" id="w45-ub-Pm6"/>
+                            <constraint firstItem="Mhe-X3-HF0" firstAttribute="leading" secondItem="tOU-ef-pBx" secondAttribute="leading" constant="20" id="yEo-mY-X48"/>
                         </constraints>
                     </view>
                 </subviews>
