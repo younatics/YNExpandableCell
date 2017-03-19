@@ -108,6 +108,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
             
             self.expandedIndexPaths.append(insertIndexPath)
             self.insertRows(at: [insertIndexPath], with: .top)
+            self.expandedIndexPathsSelectAfter(current: indexPath)
         }
         print(self.expandedIndexPaths)
 
@@ -122,7 +123,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                 guard let _index = index else { return }
                 self.expandedIndexPaths.remove(at: _index)
                 self.deleteRows(at: [expandedIndexPath], with: .top)
-                self.expandedIndexPathsAfter(current: indexPath)
+                self.expandedIndexPathsDeselectAfter(current: indexPath)
             }
         }
         print(self.expandedIndexPaths)
@@ -134,7 +135,22 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         return UITableViewAutomaticDimension
     }
     
-    private func expandedIndexPathsAfter(current indexPath: IndexPath) {
+    private func expandedIndexPathsSelectAfter(current indexPath: IndexPath) {
+        for expandedIndexPath in self.expandedIndexPaths {
+            if expandedIndexPath.section == indexPath.section {
+                if expandedIndexPath.row > indexPath.row + 1 {
+                    let index = self.expandedIndexPaths.index(of: expandedIndexPath)
+                    guard let _index = index else { return }
+                    
+                    let indexPath = IndexPath(row: expandedIndexPath.row + 1, section: expandedIndexPath.section)
+                    self.expandedIndexPaths[_index] = indexPath
+                    
+                }
+            }
+        }
+    }
+    
+    private func expandedIndexPathsDeselectAfter(current indexPath: IndexPath) {
         for expandedIndexPath in self.expandedIndexPaths {
             if expandedIndexPath.section == indexPath.section {
                 if expandedIndexPath.row > indexPath.row {
@@ -144,12 +160,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                     let indexPath = IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
                     self.expandedIndexPaths[_index] = indexPath
                     
-                } else if expandedIndexPath.row < indexPath.row {
-//                    let index = self.expandedIndexPaths.index(of: expandedIndexPath)
-//                    guard let _index = index else { return }
-//                    
-//                    let indexPath = IndexPath(row: expandedIndexPath.row + 1, section: expandedIndexPath.section)
-//                    self.expandedIndexPaths[_index] = indexPath
                 }
             }
         }
