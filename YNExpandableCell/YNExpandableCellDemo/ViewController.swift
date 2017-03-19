@@ -27,21 +27,19 @@ class ViewController: UIViewController, YNTableViewDelegate {
 
 
     func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? {
+        let ynSliderCell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
+        let ynSegmentCell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
+
         if indexPath.section == 0 && indexPath.row == 1 {
-            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
-            return expandedcell
+            return ynSliderCell
         } else if indexPath.section == 0 && indexPath.row == 2 {
-            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
-            return expandedcell
+            return ynSegmentCell
         } else if indexPath.section == 0 && indexPath.row == 4 {
-            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
-            return expandedcell
+            return ynSegmentCell
         } else if indexPath.section == 1 && indexPath.row == 0 {
-            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
-            return expandedcell
+            return ynSegmentCell
         } else if indexPath.section == 1 && indexPath.row == 1 {
-            let expandedcell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
-            return expandedcell
+            return ynSliderCell
         }
         return nil
     }

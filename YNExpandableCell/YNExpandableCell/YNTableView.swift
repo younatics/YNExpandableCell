@@ -53,10 +53,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-    public func initData() {
-        
-    }
-    
     internal func checkExpandRowIn(section: Int) -> Int {
         var openedCellCount = 0
         
@@ -101,28 +97,36 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         guard let delegate = self.ynDelegate else { return }
         
         let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
+        guard (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil else { return }
         
-        let cell = delegate.tableView(self, expandCellAt: selectedIndexPath)
-        if cell != nil {
-            for expandedIndexPath in self.expandedIndexPaths {
-                if expandedIndexPath != indexPath {
-                    let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
-                    self.expandedIndexPaths.append(insertIndexPath)
-                    self.insertRows(at: [insertIndexPath], with: .top)
-                    self.expandedIndexPathsSelectAfter(current: indexPath)
-                    break
-                }
-            }
-            
-            if self.expandedIndexPaths.isEmpty {
-                let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
-                self.expandedIndexPaths.append(insertIndexPath)
-                self.insertRows(at: [insertIndexPath], with: .top)
-                self.expandedIndexPathsSelectAfter(current: indexPath)
-
+        var sameIndexPathExists = false
+        for expandedIndexPath in self.expandedIndexPaths {
+            if indexPath == expandedIndexPath {
+                sameIndexPathExists = true
             }
         }
-        print(self.expandedIndexPaths)
+        
+        if !sameIndexPathExists {
+            self.didSelectRowLogicAt(indexPath: indexPath)
+        }
+        
+        if self.expandedIndexPaths.isEmpty {
+            self.didSelectRowLogicAt(indexPath: indexPath)
+        }
+    }
+    
+    private func didSelectRowLogicAt(indexPath: IndexPath) {
+        let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+        self.expandedIndexPaths.append(insertIndexPath)
+        self.insertRows(at: [insertIndexPath], with: .top)
+        self.expandedIndexPathsSelectAfter(current: indexPath)
+        
+        
+//        guard let delegate = self.ynDelegate else { return }
+//        print(delegate.tableView(self, cellForRowAt: indexPath))
+//        guard let ynExpandableCell = delegate.tableView(self, cellForRowAt: indexPath) as? YNExpandableCellEx else { return }
+//        
+//        ynExpandableCell.selected()
 
     }
     
@@ -146,6 +150,9 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+    
+    //PRAGMA MARK: YNTableView Logic
+
     
     private func expandedIndexPathsSelectAfter(current indexPath: IndexPath) {
         for expandedIndexPath in self.expandedIndexPaths {

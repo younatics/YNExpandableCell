@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class YNExpandableCellEx: YNExpandableCell {
+
     static let ID = "YNExpandableCellEx"
     
     @IBOutlet var titleLabel: UILabel!
@@ -27,6 +28,17 @@ class YNExpandableCellEx: YNExpandableCell {
         super.awakeFromNib()
     }
     
+    
+    public override func selected() {
+        self.customAccessoryType.alpha = 1
+        UIView.animate(withDuration: 0.5, animations: {
+                        self.customAccessoryType.alpha = 0
+//                        self.customAccessoryType.image = UIImage(named: "yn_sel")
+        }) { (completed) in
+            
+        }
+        
+    }
     
 
 }
