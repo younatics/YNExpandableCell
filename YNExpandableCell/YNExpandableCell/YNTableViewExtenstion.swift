@@ -22,5 +22,10 @@ extension YNTableView {
         
         return heightForHeaderInSection
     }
-
+    
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let delegate = self.ynDelegate else { return nil }
+        guard let viewForHeaderInSection = delegate.tableView?(self, viewForHeaderInSection: section) else { return nil }
+        return viewForHeaderInSection
+    }
 }

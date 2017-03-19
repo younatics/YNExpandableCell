@@ -12,7 +12,3 @@ import UIKit
 public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell?
 }
-
-extension YNTableViewDelegate {
-    
-}

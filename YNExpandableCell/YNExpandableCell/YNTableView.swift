@@ -142,11 +142,14 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                 self.expandedIndexPaths.remove(at: _index)
                 self.deleteRows(at: [expandedIndexPath], with: .top)
                 self.expandedIndexPathsDeselectAfter(current: indexPath)
+                
+                let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
+                guard let ynExpandableCell = cellForRow(at: selectedIndexPath) as? YNExpandableCell else { return }
+                
+                ynExpandableCell.normal()
+
             }
         }
-        print(self.expandedIndexPaths)
-
-
     }
     
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
