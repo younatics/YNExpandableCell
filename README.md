@@ -14,7 +14,7 @@
 See [CHANGELOG](https://github.com/younatics/YNExpandableCell/blob/master/CHANGELOG.md) for details
 
 ## Intoduction
-Easiest usage of expandable & collapsable cell for iOS, written in Swift 3. You can customize expandable `UITableViewCell` whatever you like. `YNExpandableCell` is made because `insertRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation)` and `deleteRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation)` is hard to use. You can just inheirt `YNTableViewDelegate` and add one more method `func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell?` 
+Easiest usage of expandable & collapsable cell for iOS, written in Swift 3. You can customize expandable `UITableViewCell` whatever you like. `YNExpandableCell` is made because `insertRows(at indexPaths, with animation` and `deleteRows(at indexPaths, with animation` is hard to use. You can just inheirt `YNTableViewDelegate` and add one more method `func tableView(_ tableView: YNTableView, expandCellAt indexPath) -> UITableViewCell?` 
 ![demo](Images/YNExpandableCell.gif)
 
 ## Requirements
