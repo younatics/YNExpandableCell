@@ -125,9 +125,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         self.insertRows(at: [insertIndexPath], with: .top)
         self.expandedIndexPathsSelectAfter(current: indexPath)
         
-        let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
-        guard let ynExpandableCell = cellForRow(at: selectedIndexPath) as? YNExpandableCell else { return }
-
+        guard let ynExpandableCell = cellForRow(at: indexPath) as? YNExpandableCell else { return }
         ynExpandableCell.selected()
 
     }
@@ -143,9 +141,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                 self.deleteRows(at: [expandedIndexPath], with: .top)
                 self.expandedIndexPathsDeselectAfter(current: indexPath)
                 
-                let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
-                guard let ynExpandableCell = cellForRow(at: selectedIndexPath) as? YNExpandableCell else { return }
-                
+                guard let ynExpandableCell = cellForRow(at: indexPath) as? YNExpandableCell else { return }
                 ynExpandableCell.normal()
 
             }
