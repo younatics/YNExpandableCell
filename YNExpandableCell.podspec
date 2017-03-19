@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNExpandableCell'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Easiest way to expand and collapse cell for iOS with Swift 3'
 
   s.description      = <<-DESC
@@ -16,7 +16,7 @@ Easiest usage of expandable & collapsible cell for iOS, written in Swift 3. You 
                         DESC
 
   s.homepage         = 'https://github.com/younatics/YNExpandableCell'
-  s.screenshots      = 'https://raw.githubusercontent.com/younatics/YNExpandableCell/master/Images/YNExpandableCell.gif'
+  s.screenshots      = 'https://github.com/younatics/YNExpandableCell/blob/master/Images/YNExpandableCell.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { "Seungyoun Yi" => "younatics@gmail.com" }
 
