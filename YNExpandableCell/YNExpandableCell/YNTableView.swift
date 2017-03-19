@@ -90,15 +90,9 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
             }
         }
         
-        for expandedIndexPath in self.expandedIndexPaths {
-            let internalIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
-            if expandedIndexPath == internalIndexPath {
-                return delegate.tableView(self, cellForRowAt: internalIndexPath)
-            }
-            
-        }
+        let internalIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
+        return delegate.tableView(self, cellForRowAt: internalIndexPath)
         
-        return delegate.tableView(self, cellForRowAt: indexPath)
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
