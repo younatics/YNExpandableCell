@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class YNExpandableCellEx: YNExpandableCell {
-
     static let ID = "YNExpandableCellEx"
     
     @IBOutlet var titleLabel: UILabel!

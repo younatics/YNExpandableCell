@@ -18,6 +18,8 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
+    open var ynTableViewRowAnimation = UITableViewRowAnimation.top
+    
     private var expandedIndexPaths = [IndexPath]()
     
     open override func awakeFromNib() {
@@ -124,11 +126,17 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         self.expandedIndexPathsSelectAfter(current: indexPath)
         
         
-//        guard let delegate = self.ynDelegate else { return }
-//        print(delegate.tableView(self, cellForRowAt: indexPath))
-//        guard let ynExpandableCell = delegate.tableView(self, cellForRowAt: indexPath) as? YNExpandableCellEx else { return }
-//        
-//        ynExpandableCell.selected()
+        guard let delegate = self.ynDelegate else { return }
+        let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
+        guard let ynExpandableCell = delegate.tableView(self, cellForRowAt: selectedIndexPath) as? YNExpandableCell else { return }
+        print(selectedIndexPath)
+        print(ynExpandableCell.subviews)
+//        for view in ynExpandableCell.subviews {
+//            guard let imageView = view as? UIImageView else { return }
+//                imageView.backgroundColor = UIColor.blue
+//        }
+        ynExpandableCell.backgroundColor = UIColor.blue
+        ynExpandableCell.ynSelected()
 
     }
     

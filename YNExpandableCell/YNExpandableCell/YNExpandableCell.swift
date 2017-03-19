@@ -36,19 +36,15 @@ public class YNExpandableCell: UITableViewCell {
         self.contentView.addSubview(self.customAccessoryType)
         
         self.selectionStyle = .none
-
-//        self.customAccessoryType = UIImageView(frame: CGRect(x: 0, y: 0, width: 26, height: 26))
-//        self.customAccessoryType.image = UIImage(named: "yn_nor")
-//        
-//        self.accessoryView = customAccessoryType
-}
+    }
     
-    public func selected() {
-//        self.customAccessoryType.alpha = 1
+    public func ynSelected() {
+        self.customAccessoryType.image = UIImage(named: "yn_sel")
+        self.layoutIfNeeded()
+
         UIView.animate(withDuration: 0.5, animations: {
-//            self.customAccessoryType.alpha = 0
-//            self.customAccessoryType.image = UIImage(named: "yn_sel")
-            self.accessoryView?.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+//            self.customAccessoryType.removeFromSuperview()
+//            self.customAccessoryType.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
         }) { (completed) in
             
         }

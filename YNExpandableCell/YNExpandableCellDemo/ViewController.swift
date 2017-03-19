@@ -18,7 +18,9 @@ class ViewController: UIViewController, YNTableViewDelegate {
         let cells = ["YNExpandableCellEx","YNSliderCell","YNSegmentCell"]
         self.ynTableView.registerCellsWith(nibNames: cells, and: cells)
         self.ynTableView.registerCellsWith(cells: [UITableViewCell.self as AnyClass], and: ["YNNonExpandableCell"])
+        
         self.ynTableView.ynDelegate = self
+//        self.ynTableView.ynTableViewRowAnimation = .top
 
     }
     
