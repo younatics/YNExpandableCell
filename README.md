@@ -1,6 +1,7 @@
 # YNExpandableCell
 ![titleImage](Images/younatics.png)
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![Version](https://img.shields.io/cocoapods/v/YNExpandableCell.svg?style=flat)](http://cocoapods.org/pods/YNExpandableCell)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/YNExpandableCell.svg)](http://cocoadocs.org/docsets/YNExpandableCell)
