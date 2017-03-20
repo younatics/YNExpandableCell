@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+/// You need to set delegate and add only one method.
 public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource {
+    
+    /**
+     Determine expandable cell in this view. This method is all that you have to do
+     
+     - Parameter tableView: YNTableView
+     - Parameter expandCellAt: Determine expandable cell and return UITableViewCell
+     */
     func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell?
 }

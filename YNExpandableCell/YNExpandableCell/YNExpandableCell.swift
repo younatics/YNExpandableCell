@@ -8,26 +8,35 @@
 
 import UIKit
 
-public class YNExpandableCell: UITableViewCell {    
+/// Inherit YNExpandableCell when you want to use custom accessory type
+public class YNExpandableCell: UITableViewCell {
+    
+    /// Normal Custom Accessory Type change UIImage
     public var normalCustomAccessoryType: UIImageView!
+    
+    /// Selected Custom Accessory Type change UIImage
     public var selectedCustomAccessoryType: UIImageView!
     
+    /// Basic Init method
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.initView()
     }
     
+    /// Basic Coder method
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    /// Basic awakeFromNib method
     public override func awakeFromNib() {
         super.awakeFromNib()
         
         self.initView()
     }
     
+    /// Init method. override this method whatever you like. Mainly about Custom Accessory Type
     public func initView() {
         let width = UIScreen.main.bounds.size.width
         let height = self.frame.size.height
@@ -44,6 +53,7 @@ public class YNExpandableCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
+    /// Normal function when cell is unclicked
     public func normal() {
         self.selectedCustomAccessoryType.isHidden = true
         self.normalCustomAccessoryType.isHidden = false
@@ -51,6 +61,7 @@ public class YNExpandableCell: UITableViewCell {
         self.rotateAnimationFrom(selectedCustomAccessoryType, toItem: normalCustomAccessoryType, duration: 0.3)
     }
     
+    /// Selected function when cell is clicked
     public func selected() {
         self.selectedCustomAccessoryType.isHidden = false
         self.normalCustomAccessoryType.isHidden = true

@@ -9,9 +9,11 @@
 import Foundation
 import UIKit
 
+/// Inherit this tableView to use YNExpandableCell
 open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     private var expandedIndexPaths = [IndexPath]()
 
+    /// Set ynDelegate to use this tableview
     open var ynDelegate: YNTableViewDelegate? {
         didSet {
             self.delegate = self
@@ -19,25 +21,34 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
+    /// Simple UITableViewRowAnimation
     open var ynTableViewRowAnimation = UITableViewRowAnimation.top
     
+    /// Called in Nib
     open override func awakeFromNib() {
         super.awakeFromNib()
         
         self.initView()
     }
     
+    /// Init method
     public override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         
         self.initView()
     }
     
-    
+    /// Init coder
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    /**
+     Register cells with array of strings
+     
+     - Parameter nibNames: [String]
+     - Parameter reuseIdentifiers: [String]
+     */
     public func registerCellsWith(nibNames: [String], and reuseIdentifiers: [String]) {
         self.checkValueIsSame(first: nibNames, second: reuseIdentifiers)
         
@@ -46,6 +57,12 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
+    /**
+     Register cells with array of cells and strings
+     
+     - Parameter cells: [AnyClass]
+     - Parameter reuseIdentifiers: [String]
+     */
     public func registerCellsWith(cells: [AnyClass], and reuseIdentifiers: [String]) {
         self.checkValueIsSame(first: cells, second: reuseIdentifiers)
         
@@ -67,18 +84,23 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     //PRAGMA MARK: YNTableView Delegate
+    
+    
+    /// Basic UITableViewDelegate: func numberOfSections(in tableView: UITableView) -> Int
     public func numberOfSections(in tableView: UITableView) -> Int {
         guard let delegate = self.ynDelegate else { return Int() }
         guard let numberOfSection = delegate.numberOfSections?(in: self) else { return Int() }
         return numberOfSection
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let delegate = self.ynDelegate else { return Int() }
         
         return delegate.tableView(self, numberOfRowsInSection: section) + self.checkExpandRowIn(section: section)
     }
     
+    /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let delegate = self.ynDelegate else { return UITableViewCell() }
         
@@ -102,7 +124,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         return delegate.tableView(self, cellForRowAt: internalIndexPath)
         
     }
-    
+    /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let delegate = self.ynDelegate else { return }
         
@@ -125,6 +147,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
+    /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         for expandedIndexPath in self.expandedIndexPaths {
             let internalIndexPath =  IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
@@ -143,6 +166,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
+    /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }

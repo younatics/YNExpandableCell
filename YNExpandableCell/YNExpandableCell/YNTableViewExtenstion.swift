@@ -9,6 +9,7 @@
 import UIKit
 
 extension YNTableView {
+    /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let delegate = self.ynDelegate else { return nil }
         guard let titleForHeaderInSection = delegate.tableView?(self, titleForHeaderInSection: section) else { return nil }
@@ -16,6 +17,7 @@ extension YNTableView {
         return titleForHeaderInSection
     }
     
+    /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         guard let delegate = self.ynDelegate else { return CGFloat() }
         guard let heightForHeaderInSection = delegate.tableView?(self, heightForHeaderInSection: section) else { return CGFloat() }
@@ -23,6 +25,7 @@ extension YNTableView {
         return heightForHeaderInSection
     }
     
+    /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let delegate = self.ynDelegate else { return nil }
         guard let viewForHeaderInSection = delegate.tableView?(self, viewForHeaderInSection: section) else { return nil }
