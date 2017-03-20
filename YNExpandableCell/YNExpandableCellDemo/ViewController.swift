@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, YNTableViewDelegate {
-
     @IBOutlet var ynTableView: YNTableView!
     
     override func viewDidLoad() {
@@ -77,6 +76,11 @@ class ViewController: UIViewController, YNTableViewDelegate {
         return expandableCell
         
     }
+    
+    public func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
+        print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
+    }
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3

@@ -128,22 +128,27 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let delegate = self.ynDelegate else { return }
         
+        
         let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
-        guard (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil else { return }
-        
-        var sameIndexPathExists = false
-        for expandedIndexPath in self.expandedIndexPaths {
-            if indexPath == expandedIndexPath {
-                sameIndexPathExists = true
+        if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil {
+            delegate.tableView(self, didSelectRowAt: indexPath, isExpandedCell: true)
+
+            var sameIndexPathExists = false
+            for expandedIndexPath in self.expandedIndexPaths {
+                if indexPath == expandedIndexPath {
+                    sameIndexPathExists = true
+                }
             }
-        }
-        
-        if !sameIndexPathExists {
-            self.didSelectRowLogicAt(indexPath: indexPath)
-        }
-        
-        if self.expandedIndexPaths.isEmpty {
-            self.didSelectRowLogicAt(indexPath: indexPath)
+            
+            if !sameIndexPathExists {
+                self.didSelectRowLogicAt(indexPath: indexPath)
+            }
+            
+            if self.expandedIndexPaths.isEmpty {
+                self.didSelectRowLogicAt(indexPath: indexPath)
+            }
+        } else {
+            delegate.tableView(self, didSelectRowAt: indexPath, isExpandedCell: false)
         }
     }
     
