@@ -9,6 +9,8 @@
 [![Platform](https://img.shields.io/cocoapods/p/YNExpandableCell.svg?style=flat)](http://cocoapods.org/pods/YNExpandableCell)
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
+#### ✨[Listed 5th at trending open source and 3rd at trending developer in Github Swift category [03/20/2017]](https://github.com/younatics/YNExpandableCell/blob/master/Images/5th.PNG)
+
 ## Updates
 
 See [CHANGELOG](https://github.com/younatics/YNExpandableCell/blob/master/CHANGELOG.md) for details
@@ -70,6 +72,14 @@ func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> U
   return nil
 }
 ```
+
+Get didSelectRowAt in `YNTableViewDelegate` method
+```swift
+public func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
+  print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
+}
+```
+
 Set basic `UITableViewDataSource`, `UITableViewDelegate` and Done!
 
 ### Customize
