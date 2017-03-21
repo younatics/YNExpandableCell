@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNExpandableCell'
-  s.version          = '0.5.0'
+  s.version          = '0.5.1'
   s.summary          = 'Easiest way to expand and collapse cell for iOS with Swift 3'
 
   s.description      = <<-DESC

@@ -1,5 +1,8 @@
 # Updates
 
+## [v0.5.1](https://github.com/younatics/YNExpandableCell/releases/tag/0.5.1)
+* Update Readme
+
 ## [v0.5.0](https://github.com/younatics/YNExpandableCell/releases/tag/0.5.0)
 * Add didDeselectRowAt method in `YNDelegate` [#1](https://github.com/younatics/YNExpandableCell/issues/1)
 * Change didSelectRowAt method to optional
