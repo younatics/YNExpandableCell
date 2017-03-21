@@ -29,7 +29,7 @@ Easiest usage of expandable & collapsible cell for iOS, written in Swift 3. You 
 
 ### Cocoapods
 
-YNDropDownMenu is available through [CocoaPods](http://cocoapods.org). To install
+YNExpandableCell is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
