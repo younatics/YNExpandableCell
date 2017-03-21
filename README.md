@@ -102,6 +102,9 @@ Make Extensions for more `UITableViewDelegate` if you need or make pull request 
 #### Please tell me or make pull request if you use this library in your application :) 
 [@zigbang](https://github.com/zigbang)
 
+## Todo
+Auto layout issue with UITableViewAutomaticDimension
+
 ## Author
 [younatics 🇰🇷](http://younatics.github.io)
 
