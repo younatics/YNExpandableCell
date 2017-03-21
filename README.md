@@ -63,21 +63,28 @@ self.ynTableView.registerCellsWith(nibNames: cells, and: cells)
 self.ynTableView.registerCellsWith(cells: [UITableViewCell.self as AnyClass], and: ["YNNonExpandableCell"])
 ```
 
-Set expandable cell in `YNTableViewDelegate` method
+Set expandable cell in `YNTableViewDelegate` method (Required)
 ```swift
 func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? {
-  let ynSliderCell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
-  if indexPath.section == 0 && indexPath.row == 1 {
-    return ynSliderCell
-  }
-  return nil
+    let ynSliderCell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
+    if indexPath.section == 0 && indexPath.row == 1 {
+        return ynSliderCell
+     }
+     return nil
 }
 ```
 
-Get didSelectRowAt in `YNTableViewDelegate` method
+Get didSelectRowAt in `YNTableViewDelegate` method (Optional)
 ```swift
-public func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
-  print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
+func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
+    print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
+}
+```
+
+Get didDeselectRowAt in `YNTableViewDelegate` method (Optional)
+```swift
+func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
+    print("Deselected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
 }
 ```
 
