@@ -85,7 +85,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     //PRAGMA MARK: YNTableView Delegate
     
-    
     /// Basic UITableViewDelegate: func numberOfSections(in tableView: UITableView) -> Int
     open func numberOfSections(in tableView: UITableView) -> Int {
         guard let delegate = self.ynDelegate else { return Int() }

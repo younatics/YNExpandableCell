@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, YNTableViewDelegate {
     @IBOutlet var ynTableView: YNTableView!
+    @IBOutlet var reloadDataButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +21,20 @@ class ViewController: UIViewController, YNTableViewDelegate {
         
         self.ynTableView.ynDelegate = self
 //        self.ynTableView.ynTableViewRowAnimation = .top
+        
+        reloadDataButton.action = #selector(self.reloadDataButtonTapped)
+        reloadDataButton.target = self
 
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func reloadDataButtonTapped() {
+        self.ynTableView.reloadData()
     }
 
 
