@@ -85,6 +85,14 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     //PRAGMA MARK: YNTableView Delegate
     
+    /// Overide tableview reloadData
+    open override func reloadData() {
+        super.reloadData()
+        for expandedIndexPath in expandedIndexPaths {
+            let internalIndexPath = IndexPath(row: expandedIndexPath.row-1, section: expandedIndexPath.section)
+            self.selectRow(at: internalIndexPath, animated: true, scrollPosition: .none)
+        }
+    }
     /// Basic UITableViewDelegate: func numberOfSections(in tableView: UITableView) -> Int
     open func numberOfSections(in tableView: UITableView) -> Int {
         guard let delegate = self.ynDelegate else { return Int() }
@@ -123,21 +131,24 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         return delegate.tableView(self, cellForRowAt: internalIndexPath)
         
     }
+    
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let delegate = self.ynDelegate else { return }
         
+        var didSelectRowAtSended = false
+        
         let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
         if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil {
             delegate.tableView(self, didSelectRowAt: indexPath, isExpandedCell: true)
-
+            
+            didSelectRowAtSended = true
             var sameIndexPathExists = false
             for expandedIndexPath in self.expandedIndexPaths {
                 if indexPath == expandedIndexPath {
                     sameIndexPathExists = true
                 }
             }
-            
             if !sameIndexPathExists {
                 self.didSelectRowLogicAt(indexPath: indexPath)
             }
@@ -146,6 +157,10 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                 self.didSelectRowLogicAt(indexPath: indexPath)
             }
         } else {
+            delegate.tableView(self, didSelectRowAt: indexPath, isExpandedCell: true)
+            didSelectRowAtSended = true
+        }
+        if !didSelectRowAtSended {
             delegate.tableView(self, didSelectRowAt: indexPath, isExpandedCell: false)
         }
     }
@@ -157,6 +172,10 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         for expandedIndexPath in self.expandedIndexPaths {
             let internalIndexPath =  IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
             
+            if expandedIndexPath == indexPath {
+                delegate.tableView(self, didDeselectRowAt: indexPath, isExpandedCell: true)
+                return
+            }
             if internalIndexPath == indexPath {
                 let index = self.expandedIndexPaths.index(of: expandedIndexPath)
                 guard let _index = index else { return }

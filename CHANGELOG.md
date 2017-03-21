@@ -1,5 +1,9 @@
 # Updates
 
+## [v0.6.0](https://github.com/younatics/YNExpandableCell/releases/tag/0.6.0)
+* Add override tableview `reloadData` method
+* Fix bug
+
 ## [v0.5.1](https://github.com/younatics/YNExpandableCell/releases/tag/0.5.1)
 * Update Readme
 
