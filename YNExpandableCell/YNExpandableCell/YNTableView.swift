@@ -128,7 +128,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let delegate = self.ynDelegate else { return }
         
-        
         let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
         if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil {
             delegate.tableView(self, didSelectRowAt: indexPath, isExpandedCell: true)
@@ -154,6 +153,8 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
     open func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let delegate = self.ynDelegate else { return }
+
         for expandedIndexPath in self.expandedIndexPaths {
             let internalIndexPath =  IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
             
@@ -166,9 +167,15 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                 
                 guard let ynExpandableCell = cellForRow(at: indexPath) as? YNExpandableCell else { return }
                 ynExpandableCell.normal()
-
+                
+                delegate.tableView(self, didDeselectRowAt: indexPath, isExpandedCell: true)
+                return
             }
         }
+        
+        delegate.tableView(self, didDeselectRowAt: indexPath, isExpandedCell: false)
+
+        
     }
     
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat

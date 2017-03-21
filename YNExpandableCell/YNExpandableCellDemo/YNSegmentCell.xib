@@ -28,6 +28,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NSW-7r-7Kv">
+                        <rect key="frame" x="20" y="43" width="335" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="2Rk-Uo-I5v"/>
+                        </constraints>
+                        <segments>
+                            <segment title="First"/>
+                            <segment title="Second"/>
+                        </segments>
+                    </segmentedControl>
                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-sY-j8j">
                         <rect key="frame" x="20" y="97" width="335" height="29"/>
                         <constraints>
@@ -37,16 +47,6 @@
                             <segment title="First"/>
                             <segment title="Second"/>
                             <segment title="Third"/>
-                        </segments>
-                    </segmentedControl>
-                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NSW-7r-7Kv">
-                        <rect key="frame" x="20" y="43" width="335" height="29"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="28" id="2Rk-Uo-I5v"/>
-                        </constraints>
-                        <segments>
-                            <segment title="First"/>
-                            <segment title="Second"/>
                         </segments>
                     </segmentedControl>
                 </subviews>

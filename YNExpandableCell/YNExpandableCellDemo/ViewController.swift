@@ -77,8 +77,12 @@ class ViewController: UIViewController, YNTableViewDelegate {
         
     }
     
-    public func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
+    func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
         print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
+    }
+    
+    func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
+        print("Deselected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
     }
 
     
