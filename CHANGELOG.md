@@ -1,5 +1,8 @@
 # Updates
 
+## [v0.4.0](https://github.com/younatics/YNExpandableCell/releases/tag/0.4.0)
+* Public to Open class
+
 ## [v0.3.1](https://github.com/younatics/YNExpandableCell/releases/tag/0.3.1)
 * Change podspec image
 

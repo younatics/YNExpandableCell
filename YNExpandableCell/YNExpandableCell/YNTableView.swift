@@ -49,7 +49,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
      - Parameter nibNames: [String]
      - Parameter reuseIdentifiers: [String]
      */
-    public func registerCellsWith(nibNames: [String], and reuseIdentifiers: [String]) {
+    open func registerCellsWith(nibNames: [String], and reuseIdentifiers: [String]) {
         self.checkValueIsSame(first: nibNames, second: reuseIdentifiers)
         
         for i in 0..<nibNames.count {
@@ -63,7 +63,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
      - Parameter cells: [AnyClass]
      - Parameter reuseIdentifiers: [String]
      */
-    public func registerCellsWith(cells: [AnyClass], and reuseIdentifiers: [String]) {
+    open func registerCellsWith(cells: [AnyClass], and reuseIdentifiers: [String]) {
         self.checkValueIsSame(first: cells, second: reuseIdentifiers)
         
         for i in 0..<cells.count {
@@ -87,21 +87,21 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     
     /// Basic UITableViewDelegate: func numberOfSections(in tableView: UITableView) -> Int
-    public func numberOfSections(in tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         guard let delegate = self.ynDelegate else { return Int() }
         guard let numberOfSection = delegate.numberOfSections?(in: self) else { return Int() }
         return numberOfSection
     }
     
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let delegate = self.ynDelegate else { return Int() }
         
         return delegate.tableView(self, numberOfRowsInSection: section) + self.checkExpandRowIn(section: section)
     }
     
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let delegate = self.ynDelegate else { return UITableViewCell() }
         
         for expandedIndexPath in self.expandedIndexPaths {
@@ -125,7 +125,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         
     }
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let delegate = self.ynDelegate else { return }
         
         
@@ -153,7 +153,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
-    public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         for expandedIndexPath in self.expandedIndexPaths {
             let internalIndexPath =  IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
             
@@ -172,7 +172,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
-    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
