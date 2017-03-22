@@ -75,9 +75,12 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     /// Expand all cell
     open func expandAll() {
+        self.expandedIndexPaths.removeAll()
+        
         guard let delegate = self.ynDelegate else { return }
         let numberOfSections = self.numberOfSections(in: self)
         
+        var tempExpandedIndexPaths = [IndexPath]()
         for section in 0..<numberOfSections {
             var rowCount = self.tableView(self, numberOfRowsInSection: section)
             for row in 0..<rowCount {
@@ -85,6 +88,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
 
                 let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
                 if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil {
+                    tempExpandedIndexPaths.append(selectedIndexPath)
                     rowCount += 1
                 }
             }
@@ -92,19 +96,37 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
             for row in 0..<rowCount {
                 let indexPath = IndexPath(row: row, section: section)
                 
-                for expandedIndexPath in expandedIndexPaths {
-                    let internalIndexPath = IndexPath(row: expandedIndexPath.row-1, section: expandedIndexPath.section)
-                    
-                    if internalIndexPath != indexPath {
-                        self.tableView(self, didSelectRowAt: indexPath)
-                        self.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-                    }
-                }
-
-
+                self.tableView(self, didSelectRowAt: indexPath)
+                print(self.tableView(self, numberOfRowsInSection: section))
+                
+                self.selectRow(at: indexPath, animated: true, scrollPosition: .none)
             }
+            
+        }
+        
+        guard tempExpandedIndexPaths.count > 0 else { return }
+        var tempSelectedRowCount = 0
+        var tempSelectedSection = tempExpandedIndexPaths[0].section
+        var addedExpandedIndexPath = IndexPath()
+        
+        for i in 0..<tempExpandedIndexPaths.count {
+            if i == 0 {
+                addedExpandedIndexPath = IndexPath(row: tempExpandedIndexPaths[i].row + 1 + tempSelectedRowCount, section: tempExpandedIndexPaths[i].section)
+            } else {
+                if tempExpandedIndexPaths[i].section == tempSelectedSection {
+                    tempSelectedRowCount += 1
+                    addedExpandedIndexPath = IndexPath(row: tempExpandedIndexPaths[i].row + 1 + tempSelectedRowCount, section: tempExpandedIndexPaths[i].section)
+                } else {
+                    tempSelectedSection = tempExpandedIndexPaths[i].section
+                    tempSelectedRowCount = 0
+                    addedExpandedIndexPath = IndexPath(row: tempExpandedIndexPaths[i].row + 1 + tempSelectedRowCount, section: tempExpandedIndexPaths[i].section)
+                }
+            }
+            self.expandedIndexPaths.append(addedExpandedIndexPath)
+
         }
     }
+    
     
     /// Collapse all cell
     open func collapseAll() {
