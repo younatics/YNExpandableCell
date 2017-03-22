@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1917E1E01E73838700322999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917E1D81E73838700322999 /* AppDelegate.swift */; };
 		1917E1E11E73838700322999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1D91E73838700322999 /* Assets.xcassets */; };
-		1917E1E21E73838700322999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1DA1E73838700322999 /* LaunchScreen.storyboard */; };
 		1917E1E31E73838700322999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1DC1E73838700322999 /* Main.storyboard */; };
 		1917E1E41E73838700322999 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1917E1DE1E73838700322999 /* Info.plist */; };
 		1917E1E51E73838700322999 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1917E1DF1E73838700322999 /* ViewController.swift */; };
@@ -19,6 +18,7 @@
 		19203BFB1E783667006C3F0D /* YNExpandableCellEx.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFA1E783667006C3F0D /* YNExpandableCellEx.xib */; };
 		19203BFD1E7837A0006C3F0D /* YNSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFC1E7837A0006C3F0D /* YNSliderCell.xib */; };
 		19203BFF1E7837AF006C3F0D /* YNSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFE1E7837AF006C3F0D /* YNSegmentCell.xib */; };
+		195474F41E8263F50002BA26 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195474F21E8263F50002BA26 /* LaunchScreen.xib */; };
 		19B47FC31E7E4C13001A91CF /* YNExpandableCell.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B47FC21E7E4C13001A91CF /* YNExpandableCell.xcassets */; };
 		19B47FC51E7EA95D001A91CF /* YNExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B47FC41E7EA95D001A91CF /* YNExpandableCell.swift */; };
 		19B47FF41E7EE7D7001A91CF /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 19B47FF21E7EE7D7001A91CF /* CHANGELOG.md */; };
@@ -41,7 +41,6 @@
 		1917E1C71E73831A00322999 /* YNExpandableCellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNExpandableCellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1917E1D81E73838700322999 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1917E1D91E73838700322999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1917E1DB1E73838700322999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1917E1DD1E73838700322999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1917E1DE1E73838700322999 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1917E1DF1E73838700322999 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		19203BFA1E783667006C3F0D /* YNExpandableCellEx.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNExpandableCellEx.xib; sourceTree = "<group>"; };
 		19203BFC1E7837A0006C3F0D /* YNSliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNSliderCell.xib; sourceTree = "<group>"; };
 		19203BFE1E7837AF006C3F0D /* YNSegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNSegmentCell.xib; sourceTree = "<group>"; };
+		195474F31E8263F50002BA26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		19B47FC21E7E4C13001A91CF /* YNExpandableCell.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YNExpandableCell.xcassets; sourceTree = "<group>"; };
 		19B47FC41E7EA95D001A91CF /* YNExpandableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNExpandableCell.swift; sourceTree = "<group>"; };
 		19B47FF21E7EE7D7001A91CF /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = SOURCE_ROOT; };
@@ -119,8 +119,8 @@
 				19203BFC1E7837A0006C3F0D /* YNSliderCell.xib */,
 				19203BFE1E7837AF006C3F0D /* YNSegmentCell.xib */,
 				1917E1D91E73838700322999 /* Assets.xcassets */,
-				1917E1DA1E73838700322999 /* LaunchScreen.storyboard */,
 				1917E1DC1E73838700322999 /* Main.storyboard */,
+				195474F21E8263F50002BA26 /* LaunchScreen.xib */,
 				1917E1DE1E73838700322999 /* Info.plist */,
 			);
 			name = YNExpandableCellDemo;
@@ -220,8 +220,8 @@
 				19B47FF71E7EE7F5001A91CF /* YNExpandableCell.podspec in Resources */,
 				1917E1E41E73838700322999 /* Info.plist in Resources */,
 				1917E1E31E73838700322999 /* Main.storyboard in Resources */,
+				195474F41E8263F50002BA26 /* LaunchScreen.xib in Resources */,
 				1917E1E11E73838700322999 /* Assets.xcassets in Resources */,
-				1917E1E21E73838700322999 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,20 +268,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1917E1DA1E73838700322999 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1917E1DB1E73838700322999 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		1917E1DC1E73838700322999 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1917E1DD1E73838700322999 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		195474F21E8263F50002BA26 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				195474F31E8263F50002BA26 /* Base */,
+			);
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
