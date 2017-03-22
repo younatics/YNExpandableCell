@@ -75,17 +75,25 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     /// Expand all cell
     open func expandAll() {
+        guard let delegate = self.ynDelegate else { return }
+
         let numberOfSections = self.numberOfSections(in: self)
         
         for section in 0..<numberOfSections {
             var rowCount = self.tableView(self, numberOfRowsInSection: section)
             for row in 0..<rowCount {
-                rowCount = self.tableView(self, numberOfRowsInSection: section)
-                print(rowCount)
+                let indexPath = IndexPath(row: row, section: section)
 
+                let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
+                if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil {
+                    rowCount += 1
+                }
+            }
+            print(rowCount)
+            
+            for row in 0..<rowCount {
                 let indexPath = IndexPath(row: row, section: section)
                 self.tableView(self, didSelectRowAt: indexPath)
-                print(indexPath)
             }
         }
     }
