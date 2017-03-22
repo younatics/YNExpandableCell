@@ -76,7 +76,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     /// Expand all cell
     open func expandAll() {
         guard let delegate = self.ynDelegate else { return }
-
         let numberOfSections = self.numberOfSections(in: self)
         
         for section in 0..<numberOfSections {
@@ -89,11 +88,20 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                     rowCount += 1
                 }
             }
-            print(rowCount)
             
             for row in 0..<rowCount {
                 let indexPath = IndexPath(row: row, section: section)
-                self.tableView(self, didSelectRowAt: indexPath)
+                
+                for expandedIndexPath in expandedIndexPaths {
+                    let internalIndexPath = IndexPath(row: expandedIndexPath.row-1, section: expandedIndexPath.section)
+                    
+                    if internalIndexPath != indexPath {
+                        self.tableView(self, didSelectRowAt: indexPath)
+                        self.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+                    }
+                }
+
+
             }
         }
     }
