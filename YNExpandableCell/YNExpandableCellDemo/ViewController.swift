@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, YNTableViewDelegate {
     @IBOutlet var ynTableView: YNTableView!
-    @IBOutlet var reloadDataButton: UIBarButtonItem!
+    @IBOutlet var expandAllButton: UIBarButtonItem!
+    @IBOutlet var collapseAllButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,10 @@ class ViewController: UIViewController, YNTableViewDelegate {
         self.ynTableView.ynDelegate = self
 //        self.ynTableView.ynTableViewRowAnimation = .top
         
-        reloadDataButton.action = #selector(self.reloadDataButtonTapped)
-        reloadDataButton.target = self
+        expandAllButton.action = #selector(self.expandAllButtonClicked)
+        expandAllButton.target = self
+        collapseAllButton.action = #selector(self.collapseAllButtonClicked)
+        collapseAllButton.target = self
 
     }
     
@@ -32,11 +35,13 @@ class ViewController: UIViewController, YNTableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func reloadDataButtonTapped() {
-        self.ynTableView.reloadData()
+    func expandAllButtonClicked() {
+        self.ynTableView.expandAll()
     }
-
+    
+    func collapseAllButtonClicked() {
+        self.ynTableView.collapseAll()
+    }
 
     func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? {
         let ynSliderCell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell

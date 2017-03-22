@@ -43,6 +43,8 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         super.init(coder: aDecoder)
     }
     
+    //PRAGMA MARK: YNTableView Method
+
     /**
      Register cells with array of strings
      
@@ -71,16 +73,24 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-    private func checkExpandRowIn(section: Int) -> Int {
-        var openedCellCount = 0
-        
-        for expandedIndexPaths in self.expandedIndexPaths {
-            if expandedIndexPaths.section == section {
-                openedCellCount += 1
+    /// Expand all cell
+    open func expandAll() {
+        guard let delegate = self.ynDelegate else { return }
+        guard let numberOfSections = delegate.numberOfSections?(in: self) else { return }
+
+        for section in 0..<numberOfSections {
+            let rowCount = delegate.tableView(self, numberOfRowsInSection: section)
+            for row in 0..<rowCount {
+                let indexPath = IndexPath(row: row, section: section)
+                self.tableView(self, didSelectRowAt: indexPath)
+                print(indexPath)
             }
         }
+    }
+    
+    /// Collapse all cell
+    open func collapseAll() {
         
-        return openedCellCount
     }
     
     //PRAGMA MARK: YNTableView Delegate
@@ -202,6 +212,18 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     //PRAGMA MARK: YNTableView Logic
+    private func checkExpandRowIn(section: Int) -> Int {
+        var openedCellCount = 0
+        
+        for expandedIndexPaths in self.expandedIndexPaths {
+            if expandedIndexPaths.section == section {
+                openedCellCount += 1
+            }
+        }
+        
+        return openedCellCount
+    }
+
     private func didSelectRowLogicAt(indexPath: IndexPath) {
         let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
         self.expandedIndexPaths.append(insertIndexPath)

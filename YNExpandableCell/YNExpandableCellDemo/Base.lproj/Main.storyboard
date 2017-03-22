@@ -35,10 +35,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="YNExpandableCell" id="ijR-hC-K3Y">
-                        <barButtonItem key="rightBarButtonItem" title="Reload" id="MNE-l1-Syq"/>
+                        <barButtonItem key="leftBarButtonItem" title="Collapse All" id="7NL-OJ-is7"/>
+                        <barButtonItem key="rightBarButtonItem" title="Expand All" id="MNE-l1-Syq"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="reloadDataButton" destination="MNE-l1-Syq" id="LvX-lk-rey"/>
+                        <outlet property="collapseAllButton" destination="7NL-OJ-is7" id="agC-dj-rE8"/>
+                        <outlet property="expandAllButton" destination="MNE-l1-Syq" id="5Id-IX-clF"/>
                         <outlet property="ynTableView" destination="RKJ-dx-yKz" id="4f5-YO-k8j"/>
                     </connections>
                 </viewController>
