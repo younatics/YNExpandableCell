@@ -80,18 +80,16 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         
         var tempExpandedIndexPaths = [IndexPath]()
         for section in 0..<numberOfSections {
-            var rowCount = self.tableView(self, numberOfRowsInSection: section)
+            let rowCount = self.tableView(self, numberOfRowsInSection: section)
             for row in 0..<rowCount {
                 let indexPath = IndexPath(row: row, section: section)
 
                 let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
                 if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil {
                     tempExpandedIndexPaths.append(selectedIndexPath)
-                    rowCount += 1
                 }
             }
         }
-        
         guard tempExpandedIndexPaths.count > 0 else { return }
         var tempSelectedRowCount = 0
         var tempSelectedSection = tempExpandedIndexPaths[0].section
@@ -122,7 +120,38 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     /// Collapse all cell
     open func collapseAll() {
+        let selectedRows = self.indexPathsForSelectedRows
+        print(selectedRows)
+        guard let _selectedRows = selectedRows else { return }
         
+        var tempSelectedRowCount = 0
+        var tempSelectedSection = _selectedRows[0].section
+        var addedExpandedIndexPath = IndexPath()
+
+        for i in 0..<_selectedRows.count {
+            if i == 0 {
+                addedExpandedIndexPath = IndexPath(row: _selectedRows[i].row, section: _selectedRows[i].section)
+            } else {
+                if _selectedRows[i].section == tempSelectedSection {
+                    tempSelectedRowCount += 1
+                    addedExpandedIndexPath = IndexPath(row: _selectedRows[i].row - tempSelectedRowCount, section: _selectedRows[i].section)
+                } else {
+                    tempSelectedSection = _selectedRows[i].section
+                    tempSelectedRowCount = 0
+                    addedExpandedIndexPath = IndexPath(row: _selectedRows[i].row, section: _selectedRows[i].section)
+                }
+
+            }
+            
+            let checkIndexPath = IndexPath(row: _selectedRows[i].row + 1, section: _selectedRows[i].section)
+            //print(checkIndexPath)
+            //print(expandedIndexPaths)
+            print(addedExpandedIndexPath)
+            //if self.expandedIndexPaths.contains(checkIndexPath) {
+            //    self.didDeselectRowLogicAt(expandedIndexPath: checkIndexPath, indexPath: addedExpandedIndexPath)
+           //     self.deselectRow(at: addedExpandedIndexPath, animated: true)
+           // }
+        }
     }
     
     //PRAGMA MARK: YNTableView Delegate
@@ -219,15 +248,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                 return
             }
             if internalIndexPath == indexPath {
-                let index = self.expandedIndexPaths.index(of: expandedIndexPath)
-                guard let _index = index else { return }
-                self.expandedIndexPaths.remove(at: _index)
-                self.deleteRows(at: [expandedIndexPath], with: .top)
-                self.expandedIndexPathsDeselectAfter(current: indexPath)
-                
-                guard let ynExpandableCell = cellForRow(at: indexPath) as? YNExpandableCell else { return }
-                ynExpandableCell.normal()
-                
+                self.didDeselectRowLogicAt(expandedIndexPath: expandedIndexPath, indexPath: indexPath)
                 delegate.tableView(self, didDeselectRowAt: indexPath, isExpandedCell: true)
                 return
             }
@@ -255,6 +276,19 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         
         return openedCellCount
     }
+    
+    private func didDeselectRowLogicAt(expandedIndexPath: IndexPath, indexPath: IndexPath) {
+        let index = self.expandedIndexPaths.index(of: expandedIndexPath)
+        guard let _index = index else { return }
+        self.expandedIndexPaths.remove(at: _index)
+        self.deleteRows(at: [expandedIndexPath], with: .top)
+        self.expandedIndexPathsDeselectAfter(current: indexPath)
+        
+        guard let ynExpandableCell = cellForRow(at: indexPath) as? YNExpandableCell else { return }
+        ynExpandableCell.normal()
+
+    }
+
 
     private func didSelectRowLogicAt(indexPath: IndexPath) {
         let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
