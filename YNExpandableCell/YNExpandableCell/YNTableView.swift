@@ -92,16 +92,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                     rowCount += 1
                 }
             }
-            
-            for row in 0..<rowCount {
-                let indexPath = IndexPath(row: row, section: section)
-                
-                self.tableView(self, didSelectRowAt: indexPath)
-                print(self.tableView(self, numberOfRowsInSection: section))
-                
-                self.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-            }
-            
         }
         
         guard tempExpandedIndexPaths.count > 0 else { return }
@@ -122,7 +112,9 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                     addedExpandedIndexPath = IndexPath(row: tempExpandedIndexPaths[i].row + 1 + tempSelectedRowCount, section: tempExpandedIndexPaths[i].section)
                 }
             }
-            self.expandedIndexPaths.append(addedExpandedIndexPath)
+            let internalIndexPath = IndexPath(row: addedExpandedIndexPath.row - 1, section: addedExpandedIndexPath.section)
+            self.didSelectRowLogicAt(indexPath: internalIndexPath)
+            self.selectRow(at: internalIndexPath, animated: true, scrollPosition: .none)
 
         }
     }
