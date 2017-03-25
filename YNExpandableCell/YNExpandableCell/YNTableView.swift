@@ -85,7 +85,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                 let indexPath = IndexPath(row: row, section: section)
 
                 let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
-                if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil {
+                if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil && !tempExpandedIndexPaths.contains(selectedIndexPath) {
                     tempExpandedIndexPaths.append(selectedIndexPath)
                 }
             }
@@ -109,7 +109,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                 }
             }
             
-            if !self.expandedIndexPaths.contains(addedExpandedIndexPath) {
+            if !self.expandedIndexPaths.contains(addedExpandedIndexPath) && self.expandedIndexPaths.count != tempExpandedIndexPaths.count {
                 let internalIndexPath = IndexPath(row: addedExpandedIndexPath.row - 1, section: addedExpandedIndexPath.section)
                 self.didSelectRowLogicAt(indexPath: internalIndexPath)
                 self.selectRow(at: internalIndexPath, animated: true, scrollPosition: .none)
@@ -117,40 +117,12 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-    
     /// Collapse all cell
     open func collapseAll() {
-        let selectedRows = self.indexPathsForSelectedRows
-        print(selectedRows)
-        guard let _selectedRows = selectedRows else { return }
-        
-        var tempSelectedRowCount = 0
-        var tempSelectedSection = _selectedRows[0].section
-        var addedExpandedIndexPath = IndexPath()
-
-        for i in 0..<_selectedRows.count {
-            if i == 0 {
-                addedExpandedIndexPath = IndexPath(row: _selectedRows[i].row, section: _selectedRows[i].section)
-            } else {
-                if _selectedRows[i].section == tempSelectedSection {
-                    tempSelectedRowCount += 1
-                    addedExpandedIndexPath = IndexPath(row: _selectedRows[i].row - tempSelectedRowCount, section: _selectedRows[i].section)
-                } else {
-                    tempSelectedSection = _selectedRows[i].section
-                    tempSelectedRowCount = 0
-                    addedExpandedIndexPath = IndexPath(row: _selectedRows[i].row, section: _selectedRows[i].section)
-                }
-
-            }
-            
-            let checkIndexPath = IndexPath(row: _selectedRows[i].row + 1, section: _selectedRows[i].section)
-            //print(checkIndexPath)
-            //print(expandedIndexPaths)
-            print(addedExpandedIndexPath)
-            //if self.expandedIndexPaths.contains(checkIndexPath) {
-            //    self.didDeselectRowLogicAt(expandedIndexPath: checkIndexPath, indexPath: addedExpandedIndexPath)
-           //     self.deselectRow(at: addedExpandedIndexPath, animated: true)
-           // }
+        while self.expandedIndexPaths.count > 0{
+            let internalIndexPath = IndexPath(row: self.expandedIndexPaths[0].row - 1, section: self.expandedIndexPaths[0].section)
+            self.didDeselectRowLogicAt(expandedIndexPath: self.expandedIndexPaths[0], indexPath: internalIndexPath)
+            self.deselectRow(at: internalIndexPath, animated: true)
         }
     }
     
