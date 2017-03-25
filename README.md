@@ -91,6 +91,13 @@ func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, 
 Set basic `UITableViewDataSource`, `UITableViewDelegate` and Done!
 
 ### Customize
+
+Expand & Collapse All if you want 
+```swift
+self.ynTableView.expandAll()
+self.ynTableView.collapseAll()
+```
+
 Inherit `YNExpandableCell` if you want awesome '+' '-' custom accessory type
 ```swift
 class YNExpandableCellEx: YNExpandableCell
