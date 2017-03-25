@@ -42,9 +42,7 @@ class YNSliderCell: UITableViewCell {
     public override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-
     }
-
     
 }
 
