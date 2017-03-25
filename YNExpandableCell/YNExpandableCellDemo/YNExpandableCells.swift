@@ -41,7 +41,7 @@ class YNSliderCell: UITableViewCell {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
-//        self.selectionStyle = .none
+        self.selectionStyle = .none
 
     }
 
@@ -62,7 +62,7 @@ class YNSegmentCell: UITableViewCell {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
-//        self.selectionStyle = .none
+        self.selectionStyle = .none
 
     }
 

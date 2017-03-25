@@ -50,7 +50,7 @@ open class YNExpandableCell: UITableViewCell {
         self.contentView.addSubview(self.normalCustomAccessoryType)
         self.contentView.addSubview(self.selectedCustomAccessoryType)
         
-//        self.selectionStyle = .none
+        self.selectionStyle = .none
     }
     
     /// Normal function when cell is unclicked
