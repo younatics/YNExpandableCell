@@ -216,7 +216,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
             let internalIndexPath =  IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
             
             if expandedIndexPath == indexPath {
-                delegate.tableView(self, didDeselectRowAt: indexPath, isExpandableCell: true, isExpandedCell: true)
+                delegate.tableView(self, didDeselectRowAt: indexPath, isExpandableCell: true, isExpandedCell: false)
                 return
             }
             if internalIndexPath == indexPath {
