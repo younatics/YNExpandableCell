@@ -77,7 +77,7 @@ func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> U
 Get didSelectRowAt in `YNTableViewDelegate` method (Optional)
 ```swift
 func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandableCell: Bool, isExpandedCell: Bool) {
-    print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandableCell: \(isExpandableCell) isExpandedCell: \     (isExpandedCell)")
+    print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandableCell: \(isExpandableCell) isExpandedCell: \(isExpandedCell)")
 }
 
 ```
