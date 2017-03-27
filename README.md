@@ -76,15 +76,16 @@ func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> U
 
 Get didSelectRowAt in `YNTableViewDelegate` method (Optional)
 ```swift
-func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
-    print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
+func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandableCell: Bool, isExpandedCell: Bool) {
+    print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandableCell: \(isExpandableCell) isExpandedCell: \     (isExpandedCell)")
 }
+
 ```
 
 Get didDeselectRowAt in `YNTableViewDelegate` method (Optional)
 ```swift
-func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
-    print("Deselected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
+func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandableCell: Bool, isExpandedCell: Bool) {
+    print("Deselected Section: \(indexPath.section) Row: \(indexPath.row) isExpandableCell: \(isExpandableCell) isExpandedCell: \(isExpandedCell)")
 }
 ```
 
