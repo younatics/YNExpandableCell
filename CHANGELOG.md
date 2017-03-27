@@ -1,4 +1,6 @@
 # Updates
+## [v0.9.0](https://github.com/younatics/YNExpandableCell/releases/tag/0.9.0)
+* Add UITest
 
 ## [v0.8.0](https://github.com/younatics/YNExpandableCell/releases/tag/0.8.0)
 * Change `didSelectRowAt` method

@@ -20,6 +20,7 @@
 		19203BFF1E7837AF006C3F0D /* YNSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFE1E7837AF006C3F0D /* YNSegmentCell.xib */; };
 		195474F41E8263F50002BA26 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195474F21E8263F50002BA26 /* LaunchScreen.xib */; };
 		1961C3EB1E8909BD00823190 /* YNExpandableDeprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1961C3EA1E8909BD00823190 /* YNExpandableDeprecated.swift */; };
+		199C679A1E89705A00F4C297 /* YNExpandableCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C67991E89705A00F4C297 /* YNExpandableCellUITests.swift */; };
 		19B47FC31E7E4C13001A91CF /* YNExpandableCell.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B47FC21E7E4C13001A91CF /* YNExpandableCell.xcassets */; };
 		19B47FC51E7EA95D001A91CF /* YNExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B47FC41E7EA95D001A91CF /* YNExpandableCell.swift */; };
 		19B47FF41E7EE7D7001A91CF /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 19B47FF21E7EE7D7001A91CF /* CHANGELOG.md */; };
@@ -28,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1917E1C81E73831A00322999 /* PBXContainerItemProxy */ = {
+		199C679C1E89705A00F4C297 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1917E1AB1E73831900322999 /* Project object */;
 			proxyType = 1;
@@ -39,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		1917E1B31E73831900322999 /* YNExpandableCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNExpandableCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1917E1C71E73831A00322999 /* YNExpandableCellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNExpandableCellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1917E1D81E73838700322999 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1917E1D91E73838700322999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1917E1DD1E73838700322999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +53,9 @@
 		19203BFE1E7837AF006C3F0D /* YNSegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNSegmentCell.xib; sourceTree = "<group>"; };
 		195474F31E8263F50002BA26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1961C3EA1E8909BD00823190 /* YNExpandableDeprecated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNExpandableDeprecated.swift; sourceTree = "<group>"; };
+		199C67971E89705A00F4C297 /* YNExpandableCellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNExpandableCellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		199C67991E89705A00F4C297 /* YNExpandableCellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNExpandableCellUITests.swift; sourceTree = "<group>"; };
+		199C679B1E89705A00F4C297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19B47FC21E7E4C13001A91CF /* YNExpandableCell.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YNExpandableCell.xcassets; sourceTree = "<group>"; };
 		19B47FC41E7EA95D001A91CF /* YNExpandableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNExpandableCell.swift; sourceTree = "<group>"; };
 		19B47FF21E7EE7D7001A91CF /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = SOURCE_ROOT; };
@@ -68,7 +71,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1917E1C41E73831A00322999 /* Frameworks */ = {
+		199C67941E89705A00F4C297 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -83,6 +86,7 @@
 			children = (
 				1917E1D61E73838700322999 /* YNExpandableCell */,
 				1917E1D71E73838700322999 /* YNExpandableCellDemo */,
+				199C67981E89705A00F4C297 /* YNExpandableCellUITests */,
 				1917E1B41E73831900322999 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				1917E1B31E73831900322999 /* YNExpandableCell.app */,
-				1917E1C71E73831A00322999 /* YNExpandableCellUITests.xctest */,
+				199C67971E89705A00F4C297 /* YNExpandableCellUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +134,15 @@
 			path = YNExpandableCell/YNExpandableCellDemo;
 			sourceTree = "<group>";
 		};
+		199C67981E89705A00F4C297 /* YNExpandableCellUITests */ = {
+			isa = PBXGroup;
+			children = (
+				199C67991E89705A00F4C297 /* YNExpandableCellUITests.swift */,
+				199C679B1E89705A00F4C297 /* Info.plist */,
+			);
+			path = YNExpandableCellUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,22 +163,22 @@
 			productReference = 1917E1B31E73831900322999 /* YNExpandableCell.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1917E1C61E73831A00322999 /* YNExpandableCellUITests */ = {
+		199C67961E89705A00F4C297 /* YNExpandableCellUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1917E1D31E73831A00322999 /* Build configuration list for PBXNativeTarget "YNExpandableCellUITests" */;
+			buildConfigurationList = 199C679E1E89705A00F4C297 /* Build configuration list for PBXNativeTarget "YNExpandableCellUITests" */;
 			buildPhases = (
-				1917E1C31E73831A00322999 /* Sources */,
-				1917E1C41E73831A00322999 /* Frameworks */,
-				1917E1C51E73831A00322999 /* Resources */,
+				199C67931E89705A00F4C297 /* Sources */,
+				199C67941E89705A00F4C297 /* Frameworks */,
+				199C67951E89705A00F4C297 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1917E1C91E73831A00322999 /* PBXTargetDependency */,
+				199C679D1E89705A00F4C297 /* PBXTargetDependency */,
 			);
 			name = YNExpandableCellUITests;
 			productName = YNExpandableCellUITests;
-			productReference = 1917E1C71E73831A00322999 /* YNExpandableCellUITests.xctest */;
+			productReference = 199C67971E89705A00F4C297 /* YNExpandableCellUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -183,10 +196,9 @@
 						DevelopmentTeam = 4G7K3CN2JU;
 						ProvisioningStyle = Automatic;
 					};
-					1917E1C61E73831A00322999 = {
+					199C67961E89705A00F4C297 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4G7K3CN2JU;
-						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1917E1B21E73831900322999;
 					};
@@ -206,7 +218,7 @@
 			projectRoot = "";
 			targets = (
 				1917E1B21E73831900322999 /* YNExpandableCell */,
-				1917E1C61E73831A00322999 /* YNExpandableCellUITests */,
+				199C67961E89705A00F4C297 /* YNExpandableCellUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,7 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1917E1C51E73831A00322999 /* Resources */ = {
+		199C67951E89705A00F4C297 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,20 +266,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1917E1C31E73831A00322999 /* Sources */ = {
+		199C67931E89705A00F4C297 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				199C679A1E89705A00F4C297 /* YNExpandableCellUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1917E1C91E73831A00322999 /* PBXTargetDependency */ = {
+		199C679D1E89705A00F4C297 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1917E1B21E73831900322999 /* YNExpandableCell */;
-			targetProxy = 1917E1C81E73831A00322999 /* PBXContainerItemProxy */;
+			targetProxy = 199C679C1E89705A00F4C297 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -412,29 +425,26 @@
 			};
 			name = Release;
 		};
-		1917E1D41E73831A00322999 /* Debug */ = {
+		199C679F1E89705A00F4C297 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				INFOPLIST_FILE = YNExpandableCellUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.YNExpandableCellUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = YNExpandableCell;
 			};
 			name = Debug;
 		};
-		1917E1D51E73831A00322999 /* Release */ = {
+		199C67A01E89705A00F4C297 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				INFOPLIST_FILE = YNExpandableCellUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seungyounyi.YNExpandableCellUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -464,14 +474,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1917E1D31E73831A00322999 /* Build configuration list for PBXNativeTarget "YNExpandableCellUITests" */ = {
+		199C679E1E89705A00F4C297 /* Build configuration list for PBXNativeTarget "YNExpandableCellUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1917E1D41E73831A00322999 /* Debug */,
-				1917E1D51E73831A00322999 /* Release */,
+				199C679F1E89705A00F4C297 /* Debug */,
+				199C67A01E89705A00F4C297 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
