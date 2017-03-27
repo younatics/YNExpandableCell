@@ -1,5 +1,9 @@
 # Updates
 
+## [v0.8.0](https://github.com/younatics/YNExpandableCell/releases/tag/0.8.0)
+* Change `didSelectRowAt` method
+* Change `didDeselectRowAt` method
+
 ## [v0.7.0](https://github.com/younatics/YNExpandableCell/releases/tag/0.7.0)
 * Add `expandAll` method
 * Add `collapseAll` method
