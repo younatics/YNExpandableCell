@@ -183,7 +183,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         
         let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
         if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil {
-            delegate.tableView(self, didSelectRowAt: indexPath, isExpandedCell: true)
+            delegate.tableView(self, didSelectRowAt: indexPath, isExpandableCell: true, isExpandedCell: false)
             
             didSelectRowAtSended = true
             var sameIndexPathExists = false
@@ -200,11 +200,11 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
                 self.didSelectRowLogicAt(indexPath: indexPath)
             }
         } else {
-            delegate.tableView(self, didSelectRowAt: indexPath, isExpandedCell: true)
+            delegate.tableView(self, didSelectRowAt: indexPath, isExpandableCell: false, isExpandedCell: true)
             didSelectRowAtSended = true
         }
         if !didSelectRowAtSended {
-            delegate.tableView(self, didSelectRowAt: indexPath, isExpandedCell: false)
+            delegate.tableView(self, didSelectRowAt: indexPath, isExpandableCell: false, isExpandedCell: false)
         }
     }
     
@@ -216,17 +216,17 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
             let internalIndexPath =  IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
             
             if expandedIndexPath == indexPath {
-                delegate.tableView(self, didDeselectRowAt: indexPath, isExpandedCell: true)
+                delegate.tableView(self, didDeselectRowAt: indexPath, isExpandableCell: true, isExpandedCell: true)
                 return
             }
             if internalIndexPath == indexPath {
                 self.didDeselectRowLogicAt(expandedIndexPath: expandedIndexPath, indexPath: indexPath)
-                delegate.tableView(self, didDeselectRowAt: indexPath, isExpandedCell: true)
+                delegate.tableView(self, didDeselectRowAt: indexPath, isExpandableCell: false, isExpandedCell: true)
                 return
             }
         }
         
-        delegate.tableView(self, didDeselectRowAt: indexPath, isExpandedCell: false)
+        delegate.tableView(self, didDeselectRowAt: indexPath, isExpandableCell: false, isExpandedCell: false)
 
         
     }

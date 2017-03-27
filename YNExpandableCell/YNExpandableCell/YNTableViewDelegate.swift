@@ -25,20 +25,22 @@ public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource 
      
      - Parameter tableView: YNTableView
      - Parameter indexPath: Selected IndexPath
-     - Parameter expandCellAt: Whether it is ExpandedCell or not
+     - Parameter isExpandableCell: Whether it is expandableCell or not
+     - Parameter isExpandedCell: Whether it is expandedCell or not
      */
-    func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandedCell: Bool)
+    func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandableCell: Bool, isExpandedCell: Bool)
     
     /**
      Get didDeselectRowAt IndexPath and whether it is ExpandedCell or not
      
      - Parameter tableView: YNTableView
      - Parameter indexPath: Deselected IndexPath
-     - Parameter expandCellAt: Whether it is ExpandedCell or not
+     - Parameter isExpandableCell: Whether it is expandableCell or not
+     - Parameter isExpandedCell: Whether it is expandedCell or not
      */
-    func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandedCell: Bool)
-
-
+    func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandableCell: Bool, isExpandedCell: Bool)
+    
+    
 }
 
 extension YNTableViewDelegate {
@@ -47,17 +49,19 @@ extension YNTableViewDelegate {
      
      - Parameter tableView: YNTableView
      - Parameter indexPath: Selected IndexPath
-     - Parameter expandCellAt: Whether it is ExpandedCell or not
+     - Parameter isExpandableCell: Whether it is expandableCell or not
+     - Parameter isExpandedCell: Whether it is expandedCell or not
      */
-    func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandedCell: Bool) { }
+    func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandableCell: Bool, isExpandedCell: Bool) { }
 
     /**
      Get didDeselectRowAt IndexPath and whether it is ExpandedCell or not
      
      - Parameter tableView: YNTableView
      - Parameter indexPath: Deselected IndexPath
-     - Parameter expandCellAt: Whether it is ExpandedCell or not
+     - Parameter isExpandableCell: Whether it is expandableCell or not
+     - Parameter isExpandedCell: Whether it is expandedCell or not
      */
-    func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandedCell: Bool) { }
+    func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandableCell: Bool, isExpandedCell: Bool) { }
     
 }

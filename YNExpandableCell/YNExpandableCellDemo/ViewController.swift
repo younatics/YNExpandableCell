@@ -91,12 +91,12 @@ class ViewController: UIViewController, YNTableViewDelegate {
         
     }
     
-    func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
-        print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
+    func tableView(_ tableView: YNTableView, didSelectRowAt indexPath: IndexPath, isExpandableCell: Bool, isExpandedCell: Bool) {
+        print("Selected Section: \(indexPath.section) Row: \(indexPath.row) isExpandableCell: \(isExpandableCell) isExpandedCell: \(isExpandedCell)")
     }
     
-    func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandedCell: Bool) {
-        print("Deselected Section: \(indexPath.section) Row: \(indexPath.row) isExpandedCell: \(isExpandedCell)")
+    func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandableCell: Bool, isExpandedCell: Bool) {
+        print("Deselected Section: \(indexPath.section) Row: \(indexPath.row) isExpandableCell: \(isExpandableCell) isExpandedCell: \(isExpandedCell)")
     }
 
     
