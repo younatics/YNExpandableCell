@@ -20,8 +20,13 @@ public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource 
      */
     func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell?
     
-    func tableView(_ tableView: YNTableView, expandCellHeightAt indexPath: IndexPath) -> CGFloat
-
+    /**
+     Determine expandable cell in this view. you can add height in YNTableViewCell object.
+     
+     - Parameter tableView: YNTableView
+     - Parameter indexPath: Determine expandable cell and return UITableViewCell
+     */
+    func tableView(_ tableView: YNTableView, expandCellWithHeightAt indexPath: IndexPath) -> YNTableViewCell?
     
     /**
      Get didSelectRowAt IndexPath and whether it is ExpandedCell or not
@@ -46,6 +51,22 @@ public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension YNTableViewDelegate {
+    /**
+     Determine expandable cell in this view. This method is all that you have to do
+     
+     - Parameter tableView: YNTableView
+     - Parameter indexPath: Determine expandable cell and return UITableViewCell
+     */
+    func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? { return nil }
+
+    /**
+     Determine expandable cell in this view. you can add height in YNTableViewCell object.
+     
+     - Parameter tableView: YNTableView
+     - Parameter indexPath: Determine expandable cell and return UITableViewCell
+     */
+    func tableView(_ tableView: YNTableView, expandCellWithHeightAt indexPath: IndexPath) -> YNTableViewCell? { return nil }
+
     /**
      Get didSelectRowAt IndexPath and whether it is ExpandedCell or not
      

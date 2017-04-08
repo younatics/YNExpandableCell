@@ -42,6 +42,17 @@ class ViewController: UIViewController, YNTableViewDelegate {
     func collapseAllButtonClicked() {
         self.ynTableView.collapseAll()
     }
+    
+    func tableView(_ tableView: YNTableView, expandCellWithHeightAt indexPath: IndexPath) -> YNTableViewCell? {
+        let ynSliderCell = YNTableViewCell()
+        ynSliderCell.cell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
+        ynSliderCell.height = 142
+
+        let ynSegmentCell = YNTableViewCell()
+        ynSegmentCell.cell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
+        ynSegmentCell.height = 160
+
+    }
 
     func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? {
         let ynSliderCell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
