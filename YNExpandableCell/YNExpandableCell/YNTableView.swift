@@ -227,10 +227,18 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         }
         
         delegate.tableView(self, didDeselectRowAt: indexPath, isExpandableCell: false, isExpandedCell: false)
-
-        
     }
     
+    
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let delegate = self.ynDelegate else {return UITableViewAutomaticDimension}
+        guard let heightForRow = delegate.tableView(self, heightForRowAt: indexPath)  else {
+            print("height will be 44")
+            return UITableViewAutomaticDimension
+        }
+        return heightForRow
+    }
+
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
     open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension

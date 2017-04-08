@@ -20,6 +20,9 @@ public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource 
      */
     func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell?
     
+    func tableView(_ tableView: YNTableView, expandCellHeightAt indexPath: IndexPath) -> CGFloat
+
+    
     /**
      Get didSelectRowAt IndexPath and whether it is ExpandedCell or not
      
@@ -39,7 +42,6 @@ public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource 
      - Parameter isExpandedCell: Whether it is expandedCell or not
      */
     func tableView(_ tableView: YNTableView, didDeselectRowAt indexPath: IndexPath, isExpandableCell: Bool, isExpandedCell: Bool)
-    
     
 }
 

@@ -18,6 +18,7 @@
 		19203BFB1E783667006C3F0D /* YNExpandableCellEx.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFA1E783667006C3F0D /* YNExpandableCellEx.xib */; };
 		19203BFD1E7837A0006C3F0D /* YNSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFC1E7837A0006C3F0D /* YNSliderCell.xib */; };
 		19203BFF1E7837AF006C3F0D /* YNSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19203BFE1E7837AF006C3F0D /* YNSegmentCell.xib */; };
+		195275551E98FA0F001764B0 /* YNTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195275541E98FA0F001764B0 /* YNTableViewCell.swift */; };
 		195474F41E8263F50002BA26 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195474F21E8263F50002BA26 /* LaunchScreen.xib */; };
 		1961C3EB1E8909BD00823190 /* YNExpandableDeprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1961C3EA1E8909BD00823190 /* YNExpandableDeprecated.swift */; };
 		199C679A1E89705A00F4C297 /* YNExpandableCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C67991E89705A00F4C297 /* YNExpandableCellUITests.swift */; };
@@ -51,6 +52,7 @@
 		19203BFA1E783667006C3F0D /* YNExpandableCellEx.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNExpandableCellEx.xib; sourceTree = "<group>"; };
 		19203BFC1E7837A0006C3F0D /* YNSliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNSliderCell.xib; sourceTree = "<group>"; };
 		19203BFE1E7837AF006C3F0D /* YNSegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YNSegmentCell.xib; sourceTree = "<group>"; };
+		195275541E98FA0F001764B0 /* YNTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNTableViewCell.swift; sourceTree = "<group>"; };
 		195474F31E8263F50002BA26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1961C3EA1E8909BD00823190 /* YNExpandableDeprecated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNExpandableDeprecated.swift; sourceTree = "<group>"; };
 		199C67971E89705A00F4C297 /* YNExpandableCellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNExpandableCellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 				19B47FF21E7EE7D7001A91CF /* CHANGELOG.md */,
 				19B47FC21E7E4C13001A91CF /* YNExpandableCell.xcassets */,
 				19203BF01E782C0C006C3F0D /* YNTableView.swift */,
+				195275541E98FA0F001764B0 /* YNTableViewCell.swift */,
 				19B47FF61E7EE7F5001A91CF /* YNExpandableCell.podspec */,
 				19B47FC41E7EA95D001A91CF /* YNExpandableCell.swift */,
 				19F0E4C61E7CCCFC00185897 /* YNTableViewExtenstion.swift */,
@@ -260,6 +263,7 @@
 				19B47FF41E7EE7D7001A91CF /* CHANGELOG.md in Sources */,
 				19203BF71E782C0C006C3F0D /* YNTableViewDelegate.swift in Sources */,
 				19F0E4C71E7CCCFC00185897 /* YNTableViewExtenstion.swift in Sources */,
+				195275551E98FA0F001764B0 /* YNTableViewCell.swift in Sources */,
 				1961C3EB1E8909BD00823190 /* YNExpandableDeprecated.swift in Sources */,
 				19203BF91E7835F9006C3F0D /* YNExpandableCells.swift in Sources */,
 				1917E1E01E73838700322999 /* AppDelegate.swift in Sources */,
@@ -481,6 +485,7 @@
 				199C67A01E89705A00F4C297 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
