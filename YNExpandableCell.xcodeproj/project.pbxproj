@@ -106,10 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				19B47FF21E7EE7D7001A91CF /* CHANGELOG.md */,
+				19B47FF61E7EE7F5001A91CF /* YNExpandableCell.podspec */,
 				19B47FC21E7E4C13001A91CF /* YNExpandableCell.xcassets */,
 				19203BF01E782C0C006C3F0D /* YNTableView.swift */,
 				195275541E98FA0F001764B0 /* YNTableViewCell.swift */,
-				19B47FF61E7EE7F5001A91CF /* YNExpandableCell.podspec */,
 				19B47FC41E7EA95D001A91CF /* YNExpandableCell.swift */,
 				19F0E4C61E7CCCFC00185897 /* YNTableViewExtenstion.swift */,
 				19203BF31E782C0C006C3F0D /* YNTableViewDelegate.swift */,

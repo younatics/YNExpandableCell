@@ -246,8 +246,6 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         for expandedIndexPaths in self.expandedIndexPaths {
             if indexPath == expandedIndexPaths {
                 let selectedIndexPath = IndexPath(row: indexPath.row - 1 - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
-                print(selectedIndexPath)
-                print(indexPath)
                 if let _height = delegate.tableView(self, expandCellWithHeightAt: selectedIndexPath)?.height {
                     height = _height
                 }
