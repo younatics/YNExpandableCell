@@ -63,6 +63,7 @@ self.ynTableView.registerCellsWith(nibNames: cells, and: cells)
 self.ynTableView.registerCellsWith(cells: [UITableViewCell.self as AnyClass], and: ["YNNonExpandableCell"])
 ```
 
+#### Use one of required method
 Set expandable cell in `YNTableViewDelegate` method (Required)
 ```swift
 func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? {
@@ -71,6 +72,20 @@ func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> U
         return ynSliderCell
      }
      return nil
+}
+```
+
+Set expandable cell with height in `YNTableViewDelegate` method using `YNTableViewCell` object (Required) 
+```swift
+func tableView(_ tableView: YNTableView, expandCellWithHeightAt indexPath: IndexPath) -> YNTableViewCell? {
+    let ynSliderCell = YNTableViewCell()
+    ynSliderCell.cell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
+    ynSliderCell.height = 142
+
+    if indexPath.section == 0 && indexPath.row == 1 {
+        return ynSliderCell
+    }
+        return nil
 }
 ```
 
