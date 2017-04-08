@@ -1,4 +1,7 @@
 # Updates
+## [v1.0.1](https://github.com/younatics/YNExpandableCell/releases/tag/1.0.1)
+* Bug fixed
+
 ## [v1.0.0](https://github.com/younatics/YNExpandableCell/releases/tag/1.0.0)
 * Add `func tableView(_ tableView: YNTableView, expandCellWithHeightAt indexPath: IndexPath) -> YNTableViewCell?` method
 
