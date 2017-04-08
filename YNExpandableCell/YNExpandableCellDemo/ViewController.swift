@@ -21,12 +21,12 @@ class ViewController: UIViewController, YNTableViewDelegate {
         self.ynTableView.registerCellsWith(cells: [UITableViewCell.self as AnyClass], and: ["YNNonExpandableCell"])
         
         self.ynTableView.ynDelegate = self
-//        self.ynTableView.ynTableViewRowAnimation = .top
+        self.ynTableView.ynTableViewRowAnimation = .top
         
-        expandAllButton.action = #selector(self.expandAllButtonClicked)
-        expandAllButton.target = self
-        collapseAllButton.action = #selector(self.collapseAllButtonClicked)
-        collapseAllButton.target = self
+        self.expandAllButton.action = #selector(self.expandAllButtonClicked)
+        self.expandAllButton.target = self
+        self.collapseAllButton.action = #selector(self.collapseAllButtonClicked)
+        self.collapseAllButton.target = self
 
     }
     
@@ -52,12 +52,6 @@ class ViewController: UIViewController, YNTableViewDelegate {
         ynSegmentCell.cell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
         ynSegmentCell.height = 160
 
-    }
-
-    func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? {
-        let ynSliderCell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
-        let ynSegmentCell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
-
         if indexPath.section == 0 && indexPath.row == 1 {
             return ynSliderCell
         } else if indexPath.section == 0 && indexPath.row == 2 {
@@ -75,6 +69,28 @@ class ViewController: UIViewController, YNTableViewDelegate {
         }
         return nil
     }
+
+//    func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? {
+//        let ynSliderCell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
+//        let ynSegmentCell = tableView.dequeueReusableCell(withIdentifier: YNSegmentCell.ID) as! YNSegmentCell
+//
+//        if indexPath.section == 0 && indexPath.row == 1 {
+//            return ynSliderCell
+//        } else if indexPath.section == 0 && indexPath.row == 2 {
+//            return ynSegmentCell
+//        } else if indexPath.section == 0 && indexPath.row == 4 {
+//            return ynSegmentCell
+//        } else if indexPath.section == 1 && indexPath.row == 0 {
+//            return ynSegmentCell
+//        } else if indexPath.section == 1 && indexPath.row == 1 {
+//            return ynSliderCell
+//        } else if indexPath.section == 2 && indexPath.row == 2 {
+//            return ynSliderCell
+//        } else if indexPath.section == 2 && indexPath.row == 4 {
+//            return ynSliderCell
+//        }
+//        return nil
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let expandableCell = tableView.dequeueReusableCell(withIdentifier: YNExpandableCellEx.ID) as! YNExpandableCellEx
@@ -110,6 +126,9 @@ class ViewController: UIViewController, YNTableViewDelegate {
         print("Deselected Section: \(indexPath.section) Row: \(indexPath.row) isExpandableCell: \(isExpandableCell) isExpandedCell: \(isExpandedCell)")
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3

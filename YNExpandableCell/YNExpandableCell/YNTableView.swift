@@ -23,7 +23,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     
     /// Simple UITableViewRowAnimation
     open var ynTableViewRowAnimation = UITableViewRowAnimation.top
-    
+
     /// Called in Nib
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -86,6 +86,8 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
 
                 let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
                 if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil && !tempExpandedIndexPaths.contains(selectedIndexPath) {
+                    tempExpandedIndexPaths.append(selectedIndexPath)
+                } else if (delegate.tableView(self, expandCellWithHeightAt: selectedIndexPath)) != nil && !tempExpandedIndexPaths.contains(selectedIndexPath) {
                     tempExpandedIndexPaths.append(selectedIndexPath)
                 }
             }
@@ -157,8 +159,11 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         for expandedIndexPath in self.expandedIndexPaths {
             if expandedIndexPath == indexPath {
                 let internalIndexPath = IndexPath(row: indexPath.row - 1 - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
-                guard let cell = delegate.tableView(self, expandCellAt: internalIndexPath) else { return UITableViewCell() }
-                return cell
+                if let cell = delegate.tableView(self, expandCellAt: internalIndexPath) {
+                    return cell
+                } else if let cell = delegate.tableView(self, expandCellWithHeightAt: internalIndexPath)?.cell {
+                    return cell
+                }
             }
         }
         
@@ -180,7 +185,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         guard let delegate = self.ynDelegate else { return }
         
         let selectedIndexPath = IndexPath(row: indexPath.row - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
-        if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil {
+        if (delegate.tableView(self, expandCellAt: selectedIndexPath)) != nil || (delegate.tableView(self, expandCellWithHeightAt: selectedIndexPath)) != nil {
             
             var sameIndexPathExists = false
             for expandedIndexPath in self.expandedIndexPaths {
@@ -232,9 +237,16 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     /// Basic UITableViewDelegate: tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let delegate = self.ynDelegate else { return 44 }
-        guard let height = delegate.tableView(self, expandCellWithHeightAt: indexPath)?.height else { return 44 }
+        if let height = delegate.tableView(self, expandCellWithHeightAt: indexPath)?.height {
+            return height
+        }
+        if let normalHeight = delegate.tableView?(self, heightForRowAt: indexPath) {
+            return normalHeight
+        }
         
-        return height
+
+        
+        return 44
     }
 
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
