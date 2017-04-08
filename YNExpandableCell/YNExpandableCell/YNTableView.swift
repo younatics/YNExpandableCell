@@ -237,27 +237,23 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     /// Basic UITableViewDelegate: tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let delegate = self.ynDelegate else { return 44 }
-//        print(self.expandedIndexPaths)
-//        print(indexPath)
+        
+        var height:CGFloat = 0
+        if let normalHeight = delegate.tableView?(self, heightForRowAt: indexPath) {
+            height = normalHeight
+        }
+
         for expandedIndexPaths in self.expandedIndexPaths {
             if indexPath == expandedIndexPaths {
                 let selectedIndexPath = IndexPath(row: indexPath.row - 1 - self.expandedRowCountSince(current: indexPath), section: indexPath.section)
                 print(selectedIndexPath)
-                if let height = delegate.tableView(self, expandCellWithHeightAt: selectedIndexPath)?.height {
-                    return height
-                }
-            } else {
-                if let normalHeight = delegate.tableView?(self, heightForRowAt: indexPath) {
-                    return normalHeight
+                print(indexPath)
+                if let _height = delegate.tableView(self, expandCellWithHeightAt: selectedIndexPath)?.height {
+                    height = _height
                 }
             }
         }
-        
-        if let normalHeight = delegate.tableView?(self, heightForRowAt: indexPath) {
-            return normalHeight
-        }
-    
-        return 44
+        return height
     }
 
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
