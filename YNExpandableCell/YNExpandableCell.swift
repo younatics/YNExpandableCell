@@ -42,9 +42,11 @@ open class YNExpandableCell: UITableViewCell {
         let height = self.frame.size.height
         
         self.normalCustomAccessoryType = UIImageView(frame: CGRect(x: width - 46, y: (height-26)/2, width: 26, height: 26))
-        self.normalCustomAccessoryType.image = UIImage(named: "yn_nor")
+        let yn_nor = UIImage(named: "yn_nor", in: Bundle(for: YNExpandableCell.self), compatibleWith: nil)
+        self.normalCustomAccessoryType.image = yn_nor
         self.selectedCustomAccessoryType = UIImageView(frame: CGRect(x: width - 46, y: (height-26)/2, width: 26, height: 26))
-        self.selectedCustomAccessoryType.image = UIImage(named: "yn_sel")
+        let yn_sel = UIImage(named: "yn_sel", in: Bundle(for: YNExpandableCell.self), compatibleWith: nil)
+        self.selectedCustomAccessoryType.image = yn_sel
         self.selectedCustomAccessoryType.isHidden = true
 
         self.contentView.addSubview(self.normalCustomAccessoryType)

@@ -1,4 +1,7 @@
 # Updates
+## [v1.1.0](https://github.com/younatics/YNExpandableCell/releases/tag/1.1.0)
+* Bug fixed
+
 ## [v1.0.1](https://github.com/younatics/YNExpandableCell/releases/tag/1.0.1)
 * Bug fixed
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YNExpandableCell
 
 class ViewController: UIViewController, YNTableViewDelegate {
     @IBOutlet var ynTableView: YNTableView!
