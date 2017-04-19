@@ -50,7 +50,7 @@ public protocol YNTableViewDelegate: UITableViewDelegate, UITableViewDataSource 
     
 }
 
-extension YNTableViewDelegate {
+public extension YNTableViewDelegate {
     /**
      Determine expandable cell in this view. This method is all that you have to do
      

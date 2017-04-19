@@ -9,6 +9,6 @@
 import UIKit
 
 open class YNTableViewCell: NSObject {
-    var cell: UITableViewCell?
-    var height: CGFloat?
+    open var cell: UITableViewCell?
+    open var height: CGFloat?
 }
