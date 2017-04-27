@@ -9,7 +9,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/YNExpandableCell.svg?style=flat)](http://cocoapods.org/pods/YNExpandableCell)
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
-#### ✨[Listed 5th at trending open source and 8th at trending developer in Github Swift category [03/21/2017]](https://github.com/younatics/YNExpandableCell/blob/master/Images/5th.PNG)
+#### ✨[Listed 5th on trending open source and 8th on trending developer in Github Swift category [03/21/2017]](https://github.com/younatics/YNExpandableCell/blob/master/Images/5th.PNG)
 
 ## Updates
 
