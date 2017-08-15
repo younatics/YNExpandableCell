@@ -276,7 +276,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         let index = self.expandedIndexPaths.index(of: expandedIndexPath)
         guard let _index = index else { return }
         self.expandedIndexPaths.remove(at: _index)
-        self.deleteRows(at: [expandedIndexPath], with: .top)
+        self.deleteRows(at: [expandedIndexPath], with: ynTableViewRowAnimation)
         self.expandedIndexPathsDeselectAfter(current: indexPath)
         
         guard let ynExpandableCell = cellForRow(at: indexPath) as? YNExpandableCell else { return }
@@ -288,7 +288,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     private func didSelectRowLogicAt(indexPath: IndexPath) {
         let insertIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
         self.expandedIndexPaths.append(insertIndexPath)
-        self.insertRows(at: [insertIndexPath], with: .top)
+        self.insertRows(at: [insertIndexPath], with: ynTableViewRowAnimation)
         self.expandedIndexPathsSelectAfter(current: indexPath)
         
         guard let ynExpandableCell = cellForRow(at: indexPath) as? YNExpandableCell else { return }
