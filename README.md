@@ -130,7 +130,7 @@ Make Extensions for more `UITableViewDelegate` if you need or make pull request 
 #### [@zigbang](https://github.com/zigbang)
 #### [MotionBook](https://github.com/younatics/MotionBook)
 ## Author
-[younatics 🇰🇷](http://younatics.github.io)
+[younatics 🇰🇷](https://twitter.com/younatics)
 
 ## License
 YNExpandableCell is available under the MIT license. See the LICENSE file for more info.
