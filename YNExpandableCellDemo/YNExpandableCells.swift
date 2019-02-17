@@ -14,7 +14,7 @@ class YNExpandableCellEx: YNExpandableCell {
     
     @IBOutlet var titleLabel: UILabel!
 
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
@@ -30,7 +30,7 @@ class YNExpandableCellEx: YNExpandableCell {
 class YNSliderCell: UITableViewCell {
     static let ID = "YNSliderCell"
     
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
     }
@@ -49,7 +49,7 @@ class YNSliderCell: UITableViewCell {
 class YNSegmentCell: UITableViewCell {
     static let ID = "YNSegmentCell"
     
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
     }
