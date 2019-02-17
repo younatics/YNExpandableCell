@@ -8,13 +8,13 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/YNExpandableCell/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/younatics/YNExpandableCell.svg?branch=master)](https://travis-ci.org/younatics/YNExpandableCell)
 [![Platform](https://img.shields.io/cocoapods/p/YNExpandableCell.svg?style=flat)](http://cocoapods.org/pods/YNExpandableCell)
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 ## Updates
 See [CHANGELOG](https://github.com/younatics/YNExpandableCell/blob/master/CHANGELOG.md) for details
 
 ## Intoduction
-Easiest usage of expandable & collapsible cell for iOS, written in Swift 3. You can customize expandable `UITableViewCell` whatever you like. `YNExpandableCell` is made because `insertRows` and `deleteRows` is hard to use. You can just inheirt `YNTableViewDelegate` and add one more method `func tableView(_ tableView: YNTableView, expandCellAt indexPath) -> UITableViewCell?` 
+Easiest usage of expandable & collapsible cell for iOS, written in Swift 4.2 You can customize expandable `UITableViewCell` whatever you like. `YNExpandableCell` is made because `insertRows` and `deleteRows` is hard to use. You can just inheirt `YNTableViewDelegate` and add one more method `func tableView(_ tableView: YNTableView, expandCellAt indexPath) -> UITableViewCell?` 
 
 ![demo](Images/demo.gif)
 

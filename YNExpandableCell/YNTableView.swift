@@ -22,7 +22,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     /// Simple UITableViewRowAnimation
-    open var ynTableViewRowAnimation = UITableViewRowAnimation.top
+    open var ynTableViewRowAnimation = UITableView.RowAnimation.top
 
     /// Called in Nib
     open override func awakeFromNib() {
@@ -32,7 +32,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     /// Init method
-    public override init(frame: CGRect, style: UITableViewStyle) {
+    public override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         
         self.initView()
@@ -256,7 +256,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
 
     /// Basic UITableViewDelegate: func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
     open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     //PRAGMA MARK: YNTableView Logic

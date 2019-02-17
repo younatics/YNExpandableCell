@@ -18,7 +18,7 @@ open class YNExpandableCell: UITableViewCell {
     open var selectedCustomAccessoryType: UIImageView!
     
     /// Basic Init method
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.initView()
@@ -97,7 +97,7 @@ open class YNExpandableCell: UITableViewCell {
             $0.duration            = duration
             $0.fromValue           = from
             $0.toValue             = to
-            $0.fillMode            = kCAFillModeForwards
+            $0.fillMode            = CAMediaTimingFillMode.forwards
             $0.isRemovedOnCompletion = false
         }
     }
