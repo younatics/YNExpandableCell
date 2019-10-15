@@ -273,7 +273,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
     }
     
     private func didDeselectRowLogicAt(expandedIndexPath: IndexPath, indexPath: IndexPath) {
-        let index = self.expandedIndexPaths.index(of: expandedIndexPath)
+        let index = self.expandedIndexPaths.firstIndex(of: expandedIndexPath)
         guard let _index = index else { return }
         self.expandedIndexPaths.remove(at: _index)
         self.deleteRows(at: [expandedIndexPath], with: ynTableViewRowAnimation)
@@ -299,7 +299,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         for expandedIndexPath in self.expandedIndexPaths {
             if expandedIndexPath.section == indexPath.section {
                 if expandedIndexPath.row > indexPath.row + 1 {
-                    let index = self.expandedIndexPaths.index(of: expandedIndexPath)
+                    let index = self.expandedIndexPaths.firstIndex(of: expandedIndexPath)
                     guard let _index = index else { return }
                     
                     let indexPath = IndexPath(row: expandedIndexPath.row + 1, section: expandedIndexPath.section)
@@ -314,7 +314,7 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         for expandedIndexPath in self.expandedIndexPaths {
             if expandedIndexPath.section == indexPath.section {
                 if expandedIndexPath.row > indexPath.row {
-                    let index = self.expandedIndexPaths.index(of: expandedIndexPath)
+                    let index = self.expandedIndexPaths.firstIndex(of: expandedIndexPath)
                     guard let _index = index else { return }
                     
                     let indexPath = IndexPath(row: expandedIndexPath.row - 1, section: expandedIndexPath.section)
