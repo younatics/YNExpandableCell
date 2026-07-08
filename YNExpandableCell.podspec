@@ -8,11 +8,11 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNExpandableCell'
-  s.version          = '1.2.1'
-  s.summary          = 'Easiest way to expand and collapse cell for iOS with Swift 4.2'
+  s.version          = '2.0.0'
+  s.summary          = 'Easiest way to expand and collapse cell for iOS with Swift 6'
 
   s.description      = <<-DESC
-Easiest usage of expandable & collapsible cell for iOS, written in Swift 3. You can customize expandable `UITableViewCell` whatever you like. `YNExpandableCell` is made because `insertRows(at indexPaths, with animation` and `deleteRows(at indexPaths, with animation` is hard to use. You can just inheirt `YNTableViewDelegate` and add one more method `func tableView(_ tableView: YNTableView, expandCellAt indexPath) -> UITableViewCell?` 
+Easiest usage of expandable & collapsible cell for iOS, written in Swift 6. You can customize expandable `UITableViewCell` whatever you like. `YNExpandableCell` is made because `insertRows(at:with:)` and `deleteRows(at:with:)` are hard to use. You can just inherit `YNTableViewDelegate` and add one more method `func tableView(_ tableView: YNTableView, expandCellAt indexPath) -> UITableViewCell?`.
                         DESC
 
   s.homepage         = 'https://github.com/younatics/YNExpandableCell'
@@ -24,7 +24,8 @@ Easiest usage of expandable & collapsible cell for iOS, written in Swift 3. You 
   s.source_files     = 'YNExpandableCell/*.swift'
   s.resources        = "YNExpandableCell/*.xcassets"
 
-  s.ios.deployment_target = '9.0'
+  s.swift_version = '6.0'
+  s.ios.deployment_target = '13.0'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'

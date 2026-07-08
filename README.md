@@ -8,21 +8,37 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/YNExpandableCell/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/younatics/YNExpandableCell.svg?branch=master)](https://travis-ci.org/younatics/YNExpandableCell)
 [![Platform](https://img.shields.io/cocoapods/p/YNExpandableCell.svg?style=flat)](http://cocoapods.org/pods/YNExpandableCell)
-[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 ## Updates
 See [CHANGELOG](https://github.com/younatics/YNExpandableCell/blob/master/CHANGELOG.md) for details
 
 ## Intoduction
-Easiest usage of expandable & collapsible cell for iOS, written in Swift 4.2 You can customize expandable `UITableViewCell` whatever you like. `YNExpandableCell` is made because `insertRows` and `deleteRows` is hard to use. You can just inheirt `YNTableViewDelegate` and add one more method `func tableView(_ tableView: YNTableView, expandCellAt indexPath) -> UITableViewCell?` 
+Easiest usage of expandable & collapsible cell for iOS, written in Swift 6. You can customize expandable `UITableViewCell` whatever you like. `YNExpandableCell` is made because `insertRows` and `deleteRows` is hard to use. You can just inheirt `YNTableViewDelegate` and add one more method `func tableView(_ tableView: YNTableView, expandCellAt indexPath) -> UITableViewCell?` 
 
 ![demo](Images/demo.gif)
 
 ## Requirements
 
-`YNExpandableCell` written in Swift 3. Compatible with iOS 8.0+
+`YNExpandableCell` written in Swift 6. Compatible with iOS 13.0+. Supports Swift Package Manager, CocoaPods, and Carthage.
 
 ## Installation
+
+### Swift Package Manager
+
+In Xcode, choose **File ▸ Add Package Dependencies…** and enter:
+
+```
+https://github.com/younatics/YNExpandableCell.git
+```
+
+Or add it to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/younatics/YNExpandableCell.git", from: "2.0.0")
+]
+```
 
 ### Cocoapods
 

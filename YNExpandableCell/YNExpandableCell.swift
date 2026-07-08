@@ -32,8 +32,10 @@ open class YNExpandableCell: UITableViewCell {
     /// Basic awakeFromNib method
     open override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.initView()
+
+        MainActor.assumeIsolated {
+            self.initView()
+        }
     }
     
     /// Init method. override this method whatever you like. Mainly about Custom Accessory Type
@@ -42,10 +44,10 @@ open class YNExpandableCell: UITableViewCell {
         let height = self.frame.size.height
         
         self.normalCustomAccessoryType = UIImageView(frame: CGRect(x: width - 46, y: (height-26)/2, width: 26, height: 26))
-        let yn_nor = UIImage(named: "yn_nor", in: Bundle(for: YNExpandableCell.self), compatibleWith: nil)
+        let yn_nor = UIImage(named: "yn_nor", in: Bundle.ynExpandableCell, compatibleWith: nil)
         self.normalCustomAccessoryType.image = yn_nor
         self.selectedCustomAccessoryType = UIImageView(frame: CGRect(x: width - 46, y: (height-26)/2, width: 26, height: 26))
-        let yn_sel = UIImage(named: "yn_sel", in: Bundle(for: YNExpandableCell.self), compatibleWith: nil)
+        let yn_sel = UIImage(named: "yn_sel", in: Bundle.ynExpandableCell, compatibleWith: nil)
         self.selectedCustomAccessoryType.image = yn_sel
         self.selectedCustomAccessoryType.isHidden = true
 
@@ -102,4 +104,18 @@ open class YNExpandableCell: UITableViewCell {
         }
     }
 
+}
+
+private final class BundleToken {}
+
+extension Bundle {
+    /// The bundle that ships YNExpandableCell's asset catalog, resolved for
+    /// Swift Package Manager (`Bundle.module`) and the framework/CocoaPods paths.
+    static var ynExpandableCell: Bundle {
+        #if SWIFT_PACKAGE
+        return .module
+        #else
+        return Bundle(for: BundleToken.self)
+        #endif
+    }
 }
