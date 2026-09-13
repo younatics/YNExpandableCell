@@ -2,25 +2,23 @@
 # YNExpandableCell
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
-[![Version](https://img.shields.io/cocoapods/v/YNExpandableCell.svg?style=flat)](http://cocoapods.org/pods/YNExpandableCell)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/YNExpandableCell.svg)](http://cocoadocs.org/docsets/YNExpandableCell)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/YNExpandableCell/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/younatics/YNExpandableCell.svg?branch=master)](https://travis-ci.org/younatics/YNExpandableCell)
-[![Platform](https://img.shields.io/cocoapods/p/YNExpandableCell.svg?style=flat)](http://cocoapods.org/pods/YNExpandableCell)
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg?style=flat)](https://swift.org/package-manager/)
+[![CocoaPods Version](https://img.shields.io/cocoapods/v/YNExpandableCell.svg?style=flat)](https://cocoapods.org/pods/YNExpandableCell)
+[![Platform](https://img.shields.io/badge/platform-iOS%2013%2B-lightgrey.svg?style=flat)](https://developer.apple.com/ios/)
 [![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/YNExpandableCell/blob/master/LICENSE)
 
 ## Updates
 See [CHANGELOG](https://github.com/younatics/YNExpandableCell/blob/master/CHANGELOG.md) for details
 
 ## Intoduction
-Easiest usage of expandable & collapsible cell for iOS, written in Swift 6. You can customize expandable `UITableViewCell` whatever you like. `YNExpandableCell` is made because `insertRows` and `deleteRows` is hard to use. You can just inheirt `YNTableViewDelegate` and add one more method `func tableView(_ tableView: YNTableView, expandCellAt indexPath) -> UITableViewCell?` 
+Easiest usage of expandable & collapsible cell for iOS, written in Swift 6. You can customize expandable `UITableViewCell` whatever you like. `YNExpandableCell` is made because `insertRows` and `deleteRows` is hard to use. You can just inherit `YNTableViewDelegate` and add one more method `func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell?`
 
 ![demo](Images/demo.gif)
 
 ## Requirements
 
-`YNExpandableCell` written in Swift 6. Compatible with iOS 13.0+. Supports Swift Package Manager, CocoaPods, and Carthage.
+`YNExpandableCell` is written in Swift 6 and uses Swift tools version 6.0. It supports iOS 13.0+ through Swift Package Manager and CocoaPods. The CocoaPods deployment target is also iOS 13.0.
 
 ## Installation
 
@@ -40,18 +38,15 @@ dependencies: [
 ]
 ```
 
-### Cocoapods
+### CocoaPods
 
-YNExpandableCell is available through [CocoaPods](http://cocoapods.org). To install
+YNExpandableCell 2.0.0 is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'YNExpandableCell'
+pod 'YNExpandableCell', '2.0.0'
 ```
-### Carthage
-```
-github "younatics/YNExpandableCell"
-```
+
 ## Usage
 ```swift
 import YNExpandableCell
@@ -76,8 +71,8 @@ self.ynTableView.registerCellsWith(nibNames: cells, and: cells)
 self.ynTableView.registerCellsWith(cells: [UITableViewCell.self as AnyClass], and: ["YNNonExpandableCell"])
 ```
 
-#### Use one of required method
-Set expandable cell in `YNTableViewDelegate` method (Required)
+#### Use one of the expandable-cell methods
+Set expandable cell in a `YNTableViewDelegate` method:
 ```swift
 func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> UITableViewCell? {
     let ynSliderCell = tableView.dequeueReusableCell(withIdentifier: YNSliderCell.ID) as! YNSliderCell
@@ -88,7 +83,7 @@ func tableView(_ tableView: YNTableView, expandCellAt indexPath: IndexPath) -> U
 }
 ```
 
-Set expandable cell with height in `YNTableViewDelegate` method using `YNTableViewCell` object (Required) 
+Or set an expandable cell with a height using a `YNTableViewCell` object:
 ```swift
 func tableView(_ tableView: YNTableView, expandCellWithHeightAt indexPath: IndexPath) -> YNTableViewCell? {
     let ynSliderCell = YNTableViewCell()
@@ -134,9 +129,9 @@ class YNExpandableCellEx: YNExpandableCell
 // Change normalCustomAccessoryType, selectedCustomAccessoryType Images
 ```
 
-Cutomize `UITableViewRowAnimation`
+Cutomize `UITableView.RowAnimation`
 ```swift
-self.ynTableView.ynTableViewRowAnimation = UITableViewRowAnimation.top
+self.ynTableView.ynTableViewRowAnimation = UITableView.RowAnimation.top
 ```
 
 Make Extensions for more `UITableViewDelegate` if you need or make pull request for me :)

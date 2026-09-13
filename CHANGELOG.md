@@ -1,4 +1,10 @@
 # Updates
+## [v2.0.0](https://github.com/younatics/YNExpandableCell/releases/tag/2.0.0)
+* Add Swift Package Manager support, including packaged image resources
+* Update the library and demo for Swift 6, including `@main` and current collection APIs
+* Raise the minimum deployment target to iOS 13.0 for Swift Package Manager and CocoaPods
+* Add unit tests
+
 ## [v1.1.0](https://github.com/younatics/YNExpandableCell/releases/tag/1.1.0)
 * Bug fixed
 
@@ -47,4 +53,3 @@
 
 ## [v0.1.0](https://github.com/younatics/YNExpandableCell/releases/tag/0.1.0)
 * Initial Pod Commit
-
