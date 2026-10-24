@@ -52,12 +52,13 @@ open class YNTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
      
      - Parameter nibNames: [String]
      - Parameter reuseIdentifiers: [String]
+     - Parameter bundle: bundle that holds the nibs (`nil` = main bundle; pass `.module` from a Swift package)
      */
-    open func registerCellsWith(nibNames: [String], and reuseIdentifiers: [String]) {
+    open func registerCellsWith(nibNames: [String], and reuseIdentifiers: [String], bundle: Bundle? = nil) {
         self.checkValueIsSame(first: nibNames, second: reuseIdentifiers)
         
         for i in 0..<nibNames.count {
-            self.register(UINib(nibName: nibNames[i], bundle: nil), forCellReuseIdentifier: reuseIdentifiers[i])
+            self.register(UINib(nibName: nibNames[i], bundle: bundle), forCellReuseIdentifier: reuseIdentifiers[i])
         }
     }
     
