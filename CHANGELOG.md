@@ -1,4 +1,8 @@
 # Updates
+## [v2.1.0](https://github.com/younatics/YNExpandableCell/releases/tag/2.1.0)
+* Raise the minimum deployment target to iOS 15.0 (Xcode 26/27 no longer build for iOS 13/14)
+* Add an optional `bundle` parameter to `registerCellsWith(nibNames:and:bundle:)` so Swift package consumers can register nibs from `Bundle.module` (default stays the main bundle)
+
 ## [v2.0.0](https://github.com/younatics/YNExpandableCell/releases/tag/2.0.0)
 * Add Swift Package Manager support, including packaged image resources
 * Update the library and demo for Swift 6, including `@main` and current collection APIs

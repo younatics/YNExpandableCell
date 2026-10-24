@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "YNExpandableCell",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v15)
     ],
     products: [
         .library(name: "YNExpandableCell", targets: ["YNExpandableCell"])

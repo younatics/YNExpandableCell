@@ -18,7 +18,7 @@ Easiest usage of expandable & collapsible cell for iOS, written in Swift 6. You 
 
 ## Requirements
 
-`YNExpandableCell` is written in Swift 6 and uses Swift tools version 6.0. It supports iOS 13.0+ through Swift Package Manager and CocoaPods. The CocoaPods deployment target is also iOS 13.0.
+`YNExpandableCell` is written in Swift 6 and uses Swift tools version 6.0. It supports iOS 15.0+ through Swift Package Manager and CocoaPods. The CocoaPods deployment target is also iOS 15.0.
 
 ## Installation
 
